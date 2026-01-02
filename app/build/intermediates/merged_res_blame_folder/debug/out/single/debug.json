@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.todolist.app-merged_res-46:/layout_activity_main.xml.flat",
+        "source": "com.todolist.app-main-48:/layout/activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\raw_notification_sound.mp3.flat",
+        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\raw\\notification_sound.mp3"
+    },
+    {
+        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\mipmap_ic_launcher.png.flat",
+        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\mipmap\\ic_launcher.png"
+    }
+]
