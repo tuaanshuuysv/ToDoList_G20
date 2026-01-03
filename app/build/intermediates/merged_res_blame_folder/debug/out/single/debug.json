@@ -1,7 +1,15 @@
 [
     {
-        "merged": "com.todolist.app-merged_res-46:/layout_activity_main.xml.flat",
-        "source": "com.todolist.app-main-48:/layout/activity_main.xml"
+        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.todolist.app-merged_res-46:/navigation_nav_graph.xml.flat",
+        "source": "com.todolist.app-main-48:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\navigation\\nav_graph.xml"
     },
     {
         "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\raw_notification_sound.mp3.flat",

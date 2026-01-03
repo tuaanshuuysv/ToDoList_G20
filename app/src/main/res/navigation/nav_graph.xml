@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <!-- TODO: Member 1 - Add task-related fragments -->
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.todolist.app.presentation.ui.home.HomeFragment"
+        android:label="@string/nav_home" />
+
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.todolist.app.presentation.ui.task.TaskListFragment"
+        android:label="Tasks" />
+
+
+    <!-- TODO: Member 2 - Add project-related fragments -->
+    <!--
+    <fragment
+        android:id="@+id/projectListFragment"
+        android:name="com. todolist.app.presentation.ui.project.ProjectListFragment"
+        android:label="@string/nav_projects" />
+    -->
+
+    <!-- TODO: Member 3 - Add category & search fragments -->
+    <!--
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com. todolist.app.presentation.ui.category.CategoryListFragment"
+        android:label="@string/nav_categories" />
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com. todolist.app.presentation.ui.search.SearchFragment"
+        android:label="Search" />
+    -->
+
+    <!-- TODO: Member 4 - Add statistics & settings fragments -->
+    <!--
+    <fragment
+        android: id="@+id/statisticsFragment"
+        android:name="com.todolist.app.presentation.ui.statistics.StatisticsFragment"
+        android:label="@string/nav_statistics" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android: name="com.todolist.app.presentation.ui.settings. SettingsFragment"
+        android: label="@string/nav_settings" />
+    -->
+
+</navigation>

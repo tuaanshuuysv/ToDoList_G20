@@ -1,0 +1,1603 @@
+Folder PATH listing for volume DATA
+Volume serial number is 0467-335D
+D:.
+|   .gitignore
+|   build.gradle
+|   cay_thu_muc.txt
+|   gradle.properties
+|   local.properties
+|   README.md
+|   settings.gradle
+|   
++---.gradle
+|   |   config.properties
+|   |   file-system.probe
+|   |   
+|   +---8.2
+|   |   |   gc.properties
+|   |   |   
+|   |   +---checksums
+|   |   |       checksums.lock
+|   |   |       md5-checksums.bin
+|   |   |       sha1-checksums.bin
+|   |   |       
+|   |   +---dependencies-accessors
+|   |   |       dependencies-accessors.lock
+|   |   |       gc.properties
+|   |   |       
+|   |   +---executionHistory
+|   |   |       executionHistory.bin
+|   |   |       executionHistory.lock
+|   |   |       
+|   |   +---fileChanges
+|   |   |       last-build.bin
+|   |   |       
+|   |   +---fileHashes
+|   |   |       fileHashes.bin
+|   |   |       fileHashes.lock
+|   |   |       resourceHashesCache.bin
+|   |   |       
+|   |   \---vcsMetadata
+|   +---buildOutputCleanup
+|   |       buildOutputCleanup.lock
+|   |       cache.properties
+|   |       outputFiles.bin
+|   |       
+|   \---vcs-1
+|           gc.properties
+|           
++---.idea
+|   |   .gitignore
+|   |   AndroidProjectSystem.xml
+|   |   compiler.xml
+|   |   copilot.data.migration.agent.xml
+|   |   copilot.data.migration.ask.xml
+|   |   copilot.data.migration.ask2agent.xml
+|   |   copilot.data.migration.edit.xml
+|   |   deploymentTargetSelector.xml
+|   |   gradle.xml
+|   |   markdown.xml
+|   |   migrations.xml
+|   |   misc.xml
+|   |   runConfigurations.xml
+|   |   vcs.xml
+|   |   workspace.xml
+|   |   
+|   \---caches
+|           deviceStreaming.xml
+|           
++---app
+|   |   build.gradle
+|   |   proguard-rules.pro
+|   |   
+|   +---build
+|   |   +---generated
+|   |   |   +---ap_generated_sources
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   \---res
+|   |   |       +---pngs
+|   |   |       |   \---debug
+|   |   |       \---resValues
+|   |   |           \---debug
+|   |   +---intermediates
+|   |   |   +---aar_metadata_check
+|   |   |   |   \---debug
+|   |   |   +---annotation_processor_list
+|   |   |   |   \---debug
+|   |   |   |           annotationProcessors.json
+|   |   |   |           
+|   |   |   +---apk
+|   |   |   |   \---debug
+|   |   |   |           app-debug.apk
+|   |   |   |           output-metadata.json
+|   |   |   |           
+|   |   |   +---apk_ide_redirect_file
+|   |   |   |   \---debug
+|   |   |   |           redirect.txt
+|   |   |   |           
+|   |   |   +---app_metadata
+|   |   |   |   \---debug
+|   |   |   |           app-metadata.properties
+|   |   |   |           
+|   |   |   +---assets
+|   |   |   |   \---debug
+|   |   |   +---compatible_screen_manifest
+|   |   |   |   \---debug
+|   |   |   |           output-metadata.json
+|   |   |   |           
+|   |   |   +---compile_and_runtime_not_namespaced_r_class_jar
+|   |   |   |   \---debug
+|   |   |   |           R.jar
+|   |   |   |           
+|   |   |   +---compressed_assets
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---data_binding_layout_info_type_merge
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---data_binding_layout_info_type_package
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---desugar_graph
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   |           +---currentProject
+|   |   |   |           |   +---dirs_bucket_0
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---dirs_bucket_1
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---dirs_bucket_2
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---dirs_bucket_3
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---dirs_bucket_4
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---dirs_bucket_5
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---jar_23268c8f607a4f19d203ca8cee468f6261fc24139cde5d40deddb682853b0961_bucket_0
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---jar_23268c8f607a4f19d203ca8cee468f6261fc24139cde5d40deddb682853b0961_bucket_1
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---jar_23268c8f607a4f19d203ca8cee468f6261fc24139cde5d40deddb682853b0961_bucket_2
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---jar_23268c8f607a4f19d203ca8cee468f6261fc24139cde5d40deddb682853b0961_bucket_3
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   +---jar_23268c8f607a4f19d203ca8cee468f6261fc24139cde5d40deddb682853b0961_bucket_4
+|   |   |   |           |   |       graph.bin
+|   |   |   |           |   |       
+|   |   |   |           |   \---jar_23268c8f607a4f19d203ca8cee468f6261fc24139cde5d40deddb682853b0961_bucket_5
+|   |   |   |           |           graph.bin
+|   |   |   |           |           
+|   |   |   |           +---externalLibs
+|   |   |   |           +---mixedScopes
+|   |   |   |           \---otherProjects
+|   |   |   +---dex
+|   |   |   |   \---debug
+|   |   |   |       +---mergeExtDexDebug
+|   |   |   |       |       classes.dex
+|   |   |   |       |       classes2.dex
+|   |   |   |       |       
+|   |   |   |       +---mergeLibDexDebug
+|   |   |   |       |   +---0
+|   |   |   |       |   +---1
+|   |   |   |       |   +---10
+|   |   |   |       |   +---11
+|   |   |   |       |   +---12
+|   |   |   |       |   +---13
+|   |   |   |       |   +---14
+|   |   |   |       |   +---15
+|   |   |   |       |   +---2
+|   |   |   |       |   +---3
+|   |   |   |       |   +---4
+|   |   |   |       |   +---5
+|   |   |   |       |   +---6
+|   |   |   |       |   +---7
+|   |   |   |       |   +---8
+|   |   |   |       |   \---9
+|   |   |   |       \---mergeProjectDexDebug
+|   |   |   |           +---0
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---1
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---10
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---11
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---12
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---13
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---14
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---15
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---2
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---3
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---4
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---5
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---6
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---7
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           +---8
+|   |   |   |           |       classes.dex
+|   |   |   |           |       
+|   |   |   |           \---9
+|   |   |   +---dex_archive_input_jar_hashes
+|   |   |   |   \---debug
+|   |   |   |           out
+|   |   |   |           
+|   |   |   +---dex_number_of_buckets_file
+|   |   |   |   \---debug
+|   |   |   |           out
+|   |   |   |           
+|   |   |   +---duplicate_classes_check
+|   |   |   |   \---debug
+|   |   |   +---external_file_lib_dex_archives
+|   |   |   |   \---debug
+|   |   |   +---external_libs_dex_archive
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---external_libs_dex_archive_with_artifact_transforms
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---incremental
+|   |   |   |   +---debug
+|   |   |   |   |   +---mergeDebugResources
+|   |   |   |   |   |   |   compile-file-map.properties
+|   |   |   |   |   |   |   merger.xml
+|   |   |   |   |   |   |   
+|   |   |   |   |   |   +---merged.dir
+|   |   |   |   |   |   \---stripped.dir
+|   |   |   |   |   \---packageDebugResources
+|   |   |   |   |       |   compile-file-map.properties
+|   |   |   |   |       |   merger.xml
+|   |   |   |   |       |   
+|   |   |   |   |       +---merged.dir
+|   |   |   |   |       \---stripped.dir
+|   |   |   |   +---debug-mergeJavaRes
+|   |   |   |   |   |   merge-state
+|   |   |   |   |   |   
+|   |   |   |   |   \---zip-cache
+|   |   |   |   |           2DtDisfgoAOVcADEcS9o7Hg4eVY=
+|   |   |   |   |           2lb8Ol8WktseSE8uTw_8yoWJxCU=
+|   |   |   |   |           2mHMMaCNe1OY5VdnL8sLXW9Ed+8=
+|   |   |   |   |           3SOq6+2Z4ZSY__B2MCdrjikZJ+I=
+|   |   |   |   |           3ziZ_TwXHTZZiUBz+b5ExtEprH8=
+|   |   |   |   |           5UrJYTD8e1cfJUI_azI7cR4r94k=
+|   |   |   |   |           7NR1gU9pBQX56vAzQZKPr+LmRHI=
+|   |   |   |   |           8By8PjIp9M2Jlzlnt4weW7JoaV8=
+|   |   |   |   |           964tLupqfmzz2QFmN5G9mhZwiq0=
+|   |   |   |   |           9O9utjf8lFi5j3yuDi7xHcntyw8=
+|   |   |   |   |           aePMQutH5J10un1plxVUrmGOFuQ=
+|   |   |   |   |           bDyuOd0urW_FMYWAqWkgghKotbM=
+|   |   |   |   |           cG7357L6MbzcPXq0AV4yy2nTGRM=
+|   |   |   |   |           coMJ+H_7lc+tg9QRxSGyv1IBGxs=
+|   |   |   |   |           CTU7NBlF_SvQnVHWTj+lDLm_uyc=
+|   |   |   |   |           cwHoIXsfOorQ4EHQyNO8V3eeXTs=
+|   |   |   |   |           cz0fFeq_8Y3mDgn9dAcixJ12Vq0=
+|   |   |   |   |           dEWI+rFgixSLyav3b+d7gO7DXL4=
+|   |   |   |   |           DrxpXQoG1VcJJhnGec4CX2jCRRU=
+|   |   |   |   |           EEIYHPMX8WQ8NK+9armPWdDaplQ=
+|   |   |   |   |           Erbgajta9w3LCFOAMx06RwI+jd0=
+|   |   |   |   |           FMAnnVjBLb1CImEoRe6zrOrHJT0=
+|   |   |   |   |           Fxycfn32TJTyzRlUZULcp5Th5Pw=
+|   |   |   |   |           gLjwALkL_q51Yzcz6OQSCeEURVU=
+|   |   |   |   |           GXvNt6EIheaSyq5Q50no7bgAuYA=
+|   |   |   |   |           HbC7O0YgSQ_BxaVSUuD7m7T3Ess=
+|   |   |   |   |           HEzetDXpNc1BJOQAgk3LnvS5p1Y=
+|   |   |   |   |           hHA_kJYVsblotm+ILUFWllWmEVc=
+|   |   |   |   |           HjCJu8M1PLxjEMiAFS9kVqKPDbM=
+|   |   |   |   |           HLNZTOyV5+3DUiijLXOKFXUR5BY=
+|   |   |   |   |           hMSklI5DtT6cAf4cLc3Il4WyQnw=
+|   |   |   |   |           HYRY9eej+MsJNGicdUlXqFZ+s8k=
+|   |   |   |   |           iJkkJS7zazFJvNVgaQawWFgY9PY=
+|   |   |   |   |           imFsNJQD7mUpnyWi9tLNPj1RDrk=
+|   |   |   |   |           jbhb0t7_Fy_O3PCnJ01xYCDystQ=
+|   |   |   |   |           JxkmBJ4LUptOfAg3sziZUOlwVG8=
+|   |   |   |   |           KNq51MHTL3JJYHGwG7_IVwMTeeY=
+|   |   |   |   |           kOEFrirUaXiSV2ijnAXxPspMGx0=
+|   |   |   |   |           ksVMKORz+LtwLoAk9fouIMScEx8=
+|   |   |   |   |           lFkHXGzkn4kUJ6AddumnR84JYQk=
+|   |   |   |   |           MBgSAujKuaZHHXG+x8Fl881OnMM=
+|   |   |   |   |           MRsHGuDK09yf0kMPsntDe0A+64U=
+|   |   |   |   |           MTF4VyyUcz+zKJQ768+SxboBO+4=
+|   |   |   |   |           N0e8_8rf9ItlmGCAWwZiBnx3gbw=
+|   |   |   |   |           nAgsjWibjPTGEWh_8zIsJeNJV2E=
+|   |   |   |   |           niv6NQag05_CIh5B6y3BMFVD__w=
+|   |   |   |   |           Nxd1v4zynA3ejjcaxUBOqKVKxSU=
+|   |   |   |   |           N_onAbLGEs2blUFiULBXeMA1Lxk=
+|   |   |   |   |           OMQSmhjLZ_mBwAYl0oomG6UDLik=
+|   |   |   |   |           OwLzjMf9FoUjEEo6wu3RwDxeWe4=
+|   |   |   |   |           Q1nYvqIxeC7__jbWYVgKm56BsJ0=
+|   |   |   |   |           Q7e15UhMxQug2BBpJ9bXoyxAr1k=
+|   |   |   |   |           QF3PqXqLZ0wOHEfR7Y0bz_oIXmc=
+|   |   |   |   |           Qk7mO5EJwgzt1xoEtcbTO3e0Kc8=
+|   |   |   |   |           qoHJOk3XEWQHbsrd5CZFJ5SYyRE=
+|   |   |   |   |           QPQU9hgzHDYCPJIX8_XjFEZg1Y8=
+|   |   |   |   |           qu3sQc4jikZCSnNkRvkSJj92aAk=
+|   |   |   |   |           REOyVSnUv154S1P1OYH9dXK67Go=
+|   |   |   |   |           resmhjbY3oU5QjX9bwKtI_UCkP0=
+|   |   |   |   |           SE_wM75Jn+RlFeHSuK7itTyT028=
+|   |   |   |   |           SRuUtZx7K13NLxs60tBLG+2AnPw=
+|   |   |   |   |           tdzUGVf8c5V4fKyxy+dImxPHjvM=
+|   |   |   |   |           te2XQVtPm3CcsV8+Lzb00EtMjYQ=
+|   |   |   |   |           ulifXVgKokWT_fpCgxx389JgaPI=
+|   |   |   |   |           ULZh6GBEy+ebs7LnGhS1+dfpDc8=
+|   |   |   |   |           UsE3G3Zjyu+pRLrJSvBJevvQySc=
+|   |   |   |   |           VmA8LxO_nXsqA7Qg_rVMtoY+KqU=
+|   |   |   |   |           W8V49VGQxYZuURCUtZlU2mFLSD4=
+|   |   |   |   |           WWbFeYdS2HFT+yJuaNoEAv0tiAg=
+|   |   |   |   |           x1FR19pjKyJJqrri_BAw_YaEN_I=
+|   |   |   |   |           XaRA0UoMRleVZSJ+BcvrsxqYN6k=
+|   |   |   |   |           XvyB9uc1giuYNQvfhtheKCB5VGc=
+|   |   |   |   |           xy2VTu7Vez525RaD0ze0659Z+gA=
+|   |   |   |   |           y1618yFaTUaBWvwzR3P4zTdnnpI=
+|   |   |   |   |           YYOD20hjB6wEx86bmt6gs3ylU3k=
+|   |   |   |   |           Z79EAWdMS4hjVgHr07hXIxbNHZI=
+|   |   |   |   |           zSosFVGv1OcIR0t1L6cxuIxHOe8=
+|   |   |   |   |           ZvWzXKW_w2XxFhmGRGo38lKKhTA=
+|   |   |   |   |           
+|   |   |   |   +---mergeDebugAssets
+|   |   |   |   |       merger.xml
+|   |   |   |   |       
+|   |   |   |   +---mergeDebugJniLibFolders
+|   |   |   |   |       merger.xml
+|   |   |   |   |       
+|   |   |   |   +---mergeDebugShaders
+|   |   |   |   |       merger.xml
+|   |   |   |   |       
+|   |   |   |   +---packageDebug
+|   |   |   |   |   \---tmp
+|   |   |   |   |       \---debug
+|   |   |   |   |           |   dex-renamer-state.txt
+|   |   |   |   |           |   
+|   |   |   |   |           \---zip-cache
+|   |   |   |   |                   androidResources
+|   |   |   |   |                   javaResources0
+|   |   |   |   |                   
+|   |   |   |   \---processDebugResources
+|   |   |   |           resources-list-for-resources-debug.ap_.txt
+|   |   |   |           
+|   |   |   +---javac
+|   |   |   |   \---debug
+|   |   |   |       \---classes
+|   |   |   |           \---com
+|   |   |   |               \---todolist
+|   |   |   |                   \---app
+|   |   |   |                       |   TodoApplication.class
+|   |   |   |                       |   
+|   |   |   |                       +---data
+|   |   |   |                       |   +---local
+|   |   |   |                       |   |   +---dao
+|   |   |   |                       |   |   |       ActivityLogDao.class
+|   |   |   |                       |   |   |       AppSettingsDao.class
+|   |   |   |                       |   |   |       CategoryDao.class
+|   |   |   |                       |   |   |       FocusSessionDao.class
+|   |   |   |                       |   |   |       MilestoneDao.class
+|   |   |   |                       |   |   |       ProjectDao.class
+|   |   |   |                       |   |   |       SubtaskDao.class
+|   |   |   |                       |   |   |       TagDao.class
+|   |   |   |                       |   |   |       TaskDao.class
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---database
+|   |   |   |                       |   |   |       Converters.class
+|   |   |   |                       |   |   |       DatabaseCallback.class
+|   |   |   |                       |   |   |       TodoDatabase.class
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   \---entity
+|   |   |   |                       |   |       |   ActivityLog.class
+|   |   |   |                       |   |       |   AppSettings.class
+|   |   |   |                       |   |       |   Category.class
+|   |   |   |                       |   |       |   FocusSession.class
+|   |   |   |                       |   |       |   Milestone.class
+|   |   |   |                       |   |       |   Project.class
+|   |   |   |                       |   |       |   Subtask.class
+|   |   |   |                       |   |       |   Tag.class
+|   |   |   |                       |   |       |   Task.class
+|   |   |   |                       |   |       |   TaskTag.class
+|   |   |   |                       |   |       |   
+|   |   |   |                       |   |       \---relations
+|   |   |   |                       |   |               CategoryWithStats.class
+|   |   |   |                       |   |               ProjectWithStats.class
+|   |   |   |                       |   |               ProjectWithTasks.class
+|   |   |   |                       |   |               TaskWithDetails.class
+|   |   |   |                       |   |               TaskWithSubtasks.class
+|   |   |   |                       |   |               
+|   |   |   |                       |   +---preferences
+|   |   |   |                       |   |       AppPreferences.class
+|   |   |   |                       |   |       
+|   |   |   |                       |   \---repository
+|   |   |   |                       |           ActivityLogRepository.class
+|   |   |   |                       |           CategoryRepository.class
+|   |   |   |                       |           FocusSessionRepository.class
+|   |   |   |                       |           MilestoneRepository.class
+|   |   |   |                       |           ProjectRepository.class
+|   |   |   |                       |           SettingsRepository.class
+|   |   |   |                       |           SubtaskRepository.class
+|   |   |   |                       |           TagRepository.class
+|   |   |   |                       |           TaskRepository.class
+|   |   |   |                       |           
+|   |   |   |                       +---domain
+|   |   |   |                       |   +---model
+|   |   |   |                       |   |       FilterOptions.class
+|   |   |   |                       |   |       ProjectModel.class
+|   |   |   |                       |   |       TaskModel.class
+|   |   |   |                       |   |       
+|   |   |   |                       |   +---usecase
+|   |   |   |                       |   |   +---backup
+|   |   |   |                       |   |   |       BackupDataUseCase.class
+|   |   |   |                       |   |   |       RestoreDataUseCase.class
+|   |   |   |                       |   |   |       ValidateBackupUseCase.class
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---focus
+|   |   |   |                       |   |   |       CompleteFocusSessionUseCase.class
+|   |   |   |                       |   |   |       GetFocusStatsUseCase.class
+|   |   |   |                       |   |   |       StartFocusSessionUseCase.class
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---project
+|   |   |   |                       |   |   |       ArchiveProjectUseCase.class
+|   |   |   |                       |   |   |       CreateProjectUseCase.class
+|   |   |   |                       |   |   |       DeleteProjectUseCase.class
+|   |   |   |                       |   |   |       GetProjectStatsUseCase.class
+|   |   |   |                       |   |   |       UpdateProjectUseCase.class
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---recurring
+|   |   |   |                       |   |   |       CalculateNextDueDateUseCase.class
+|   |   |   |                       |   |   |       CreateRecurringTaskUseCase.class
+|   |   |   |                       |   |   |       ProcessRecurringTaskUseCase.class
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---statistics
+|   |   |   |                       |   |   |       GetCategoryStatsUseCase.class
+|   |   |   |                       |   |   |       GetOverallStatsUseCase.class
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   \---task
+|   |   |   |                       |   |           CompleteTaskUseCase.class
+|   |   |   |                       |   |           CreateTaskUseCase.class
+|   |   |   |                       |   |           DeleteTaskUseCase.class
+|   |   |   |                       |   |           GetTasksUseCase.class
+|   |   |   |                       |   |           MoveTaskUseCase.class
+|   |   |   |                       |   |           UpdateTaskUseCase.class
+|   |   |   |                       |   |           
+|   |   |   |                       |   \---util
+|   |   |   |                       |           DateCalculator.class
+|   |   |   |                       |           RecurrenceRuleParser.class
+|   |   |   |                       |           ValidationUtils.class
+|   |   |   |                       |           
+|   |   |   |                       \---presentation
+|   |   |   |                           +---di
+|   |   |   |                           |       AppModule.class
+|   |   |   |                           |       DatabaseModule.class
+|   |   |   |                           |       RepositoryModule.class
+|   |   |   |                           |       ViewModelFactory.class
+|   |   |   |                           |       
+|   |   |   |                           +---service
+|   |   |   |                           |   +---backup
+|   |   |   |                           |   |       AutoBackupWorker.class
+|   |   |   |                           |   |       BackupService.class
+|   |   |   |                           |   |       RestoreService.class
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---focus
+|   |   |   |                           |   |       FocusNotification.class
+|   |   |   |                           |   |       FocusTimerService.class
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---notification
+|   |   |   |                           |   |       DailyReminderWorker.class
+|   |   |   |                           |   |       NotificationHelper.class
+|   |   |   |                           |   |       NotificationReceiver.class
+|   |   |   |                           |   |       ReminderScheduler.class
+|   |   |   |                           |   |       
+|   |   |   |                           |   \---widget
+|   |   |   |                           |           TodoWidgetProvider.class
+|   |   |   |                           |           TodoWidgetRemoteViewsFactory.class
+|   |   |   |                           |           TodoWidgetService.class
+|   |   |   |                           |           
+|   |   |   |                           +---ui
+|   |   |   |                           |   +---calendar
+|   |   |   |                           |   |   |   CalendarFragment.class
+|   |   |   |                           |   |   |   CalendarViewModel.class
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           CalendarDayAdapter.class
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---category
+|   |   |   |                           |   |   |   AddEditCategoryDialog.class
+|   |   |   |                           |   |   |   CategoryListFragment.class
+|   |   |   |                           |   |   |   CategoryViewModel.class
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           CategoryAdapter.class
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---common
+|   |   |   |                           |   |       BaseFragment.class
+|   |   |   |                           |   |       BaseViewModel.class
+|   |   |   |                           |   |       ColorPickerDialog.class
+|   |   |   |                           |   |       ConfirmDialog.class
+|   |   |   |                           |   |       DateTimePickerDialog.class
+|   |   |   |                           |   |       IconPickerDialog.class
+|   |   |   |                           |   |       LoadingDialog.class
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---focus
+|   |   |   |                           |   |       FocusModeActivity.class
+|   |   |   |                           |   |       FocusStatsFragment.class
+|   |   |   |                           |   |       FocusTimerView.class
+|   |   |   |                           |   |       FocusViewModel.class
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---home
+|   |   |   |                           |   |   |   HomeFragment.class
+|   |   |   |                           |   |   |   HomeViewModel.class
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           TaskAdapter.class
+|   |   |   |                           |   |           TaskViewHolder.class
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---main
+|   |   |   |                           |   |       MainActivity.class
+|   |   |   |                           |   |       MainViewModel.class
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---project
+|   |   |   |                           |   |   |   AddEditProjectFragment.class
+|   |   |   |                           |   |   |   ProjectDetailFragment.class
+|   |   |   |                           |   |   |   ProjectListFragment.class
+|   |   |   |                           |   |   |   ProjectViewModel.class
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   +---adapter
+|   |   |   |                           |   |   |       KanbanColumnAdapter.class
+|   |   |   |                           |   |   |       MilestoneAdapter.class
+|   |   |   |                           |   |   |       ProjectAdapter.class
+|   |   |   |                           |   |   |       
+|   |   |   |                           |   |   \---view
+|   |   |   |                           |   |           ProjectCalendarView.class
+|   |   |   |                           |   |           ProjectKanbanView.class
+|   |   |   |                           |   |           ProjectListView.class
+|   |   |   |                           |   |           ProjectTimelineView.class
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---search
+|   |   |   |                           |   |   |   FilterBottomSheet.class
+|   |   |   |                           |   |   |   SearchFragment.class
+|   |   |   |                           |   |   |   SearchViewModel.class
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           SearchResultAdapter.class
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---settings
+|   |   |   |                           |   |       BackupRestoreFragment.class
+|   |   |   |                           |   |       NotificationSettingsFragment.class
+|   |   |   |                           |   |       SettingsActivity.class
+|   |   |   |                           |   |       SettingsFragment.class
+|   |   |   |                           |   |       SettingsViewModel.class
+|   |   |   |                           |   |       ThemeSettingsFragment.class
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---statistics
+|   |   |   |                           |   |   |   StatisticsFragment.class
+|   |   |   |                           |   |   |   StatisticsViewModel.class
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---chart
+|   |   |   |                           |   |           CategoryPieChartView.class
+|   |   |   |                           |   |           ChartHelper.class
+|   |   |   |                           |   |           CompletionChartView.class
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---task
+|   |   |   |                           |   |   |   AddEditTaskFragment.class
+|   |   |   |                           |   |   |   TaskDetailFragment.class
+|   |   |   |                           |   |   |   TaskListFragment.class
+|   |   |   |                           |   |   |   TaskViewModel.class
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           SubtaskAdapter.class
+|   |   |   |                           |   |           TagAdapter.class
+|   |   |   |                           |   |           
+|   |   |   |                           |   \---widget
+|   |   |   |                           |           CategoryChipView.class
+|   |   |   |                           |           EmptyStateView.class
+|   |   |   |                           |           PriorityView.class
+|   |   |   |                           |           ProgressCircleView.class
+|   |   |   |                           |           SwipeActionView.class
+|   |   |   |                           |           TaskItemView.class
+|   |   |   |                           |           
+|   |   |   |                           \---util
+|   |   |   |                                   ColorUtils.class
+|   |   |   |                                   Constants.class
+|   |   |   |                                   DateUtils.class
+|   |   |   |                                   FileUtils.class
+|   |   |   |                                   FormatUtils.class
+|   |   |   |                                   JsonUtils.class
+|   |   |   |                                   KeyboardUtils.class
+|   |   |   |                                   PermissionUtils.class
+|   |   |   |                                   RecurrenceUtils.class
+|   |   |   |                                   TimeUtils.class
+|   |   |   |                                   ValidationUtils.class
+|   |   |   |                                   ViewUtils.class
+|   |   |   |                                   
+|   |   |   +---java_res
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   |           \---com
+|   |   |   |               \---todolist
+|   |   |   |                   \---app
+|   |   |   |                       +---data
+|   |   |   |                       |   +---local
+|   |   |   |                       |   |   +---dao
+|   |   |   |                       |   |   +---database
+|   |   |   |                       |   |   \---entity
+|   |   |   |                       |   |       \---relations
+|   |   |   |                       |   +---preferences
+|   |   |   |                       |   \---repository
+|   |   |   |                       +---domain
+|   |   |   |                       |   +---model
+|   |   |   |                       |   +---usecase
+|   |   |   |                       |   |   +---backup
+|   |   |   |                       |   |   +---focus
+|   |   |   |                       |   |   +---project
+|   |   |   |                       |   |   +---recurring
+|   |   |   |                       |   |   +---statistics
+|   |   |   |                       |   |   \---task
+|   |   |   |                       |   \---util
+|   |   |   |                       \---presentation
+|   |   |   |                           +---di
+|   |   |   |                           +---service
+|   |   |   |                           |   +---backup
+|   |   |   |                           |   +---focus
+|   |   |   |                           |   +---notification
+|   |   |   |                           |   \---widget
+|   |   |   |                           +---ui
+|   |   |   |                           |   +---calendar
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   +---category
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   +---common
+|   |   |   |                           |   +---focus
+|   |   |   |                           |   +---home
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   +---main
+|   |   |   |                           |   +---project
+|   |   |   |                           |   |   +---adapter
+|   |   |   |                           |   |   \---view
+|   |   |   |                           |   +---search
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   +---settings
+|   |   |   |                           |   +---statistics
+|   |   |   |                           |   |   \---chart
+|   |   |   |                           |   +---task
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   \---widget
+|   |   |   |                           \---util
+|   |   |   +---local_only_symbol_list
+|   |   |   |   \---debug
+|   |   |   |           R-def.txt
+|   |   |   |           
+|   |   |   +---manifest_merge_blame_file
+|   |   |   |   \---debug
+|   |   |   |           manifest-merger-blame-debug-report.txt
+|   |   |   |           
+|   |   |   +---merged_java_res
+|   |   |   |   \---debug
+|   |   |   |           base.jar
+|   |   |   |           
+|   |   |   +---merged_jni_libs
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---merged_manifest
+|   |   |   |   \---debug
+|   |   |   |           AndroidManifest.xml
+|   |   |   |           
+|   |   |   +---merged_manifests
+|   |   |   |   \---debug
+|   |   |   |           AndroidManifest.xml
+|   |   |   |           output-metadata.json
+|   |   |   |           
+|   |   |   +---merged_res
+|   |   |   |   \---debug
+|   |   |   |           layout_activity_main.xml.flat
+|   |   |   |           mipmap_ic_launcher.png.flat
+|   |   |   |           raw_notification_sound.mp3.flat
+|   |   |   |           values-af_values-af.arsc.flat
+|   |   |   |           values-am_values-am.arsc.flat
+|   |   |   |           values-ar_values-ar.arsc.flat
+|   |   |   |           values-as_values-as.arsc.flat
+|   |   |   |           values-az_values-az.arsc.flat
+|   |   |   |           values-b+es+419_values-b+es+419.arsc.flat
+|   |   |   |           values-b+sr+Latn_values-b+sr+Latn.arsc.flat
+|   |   |   |           values-be_values-be.arsc.flat
+|   |   |   |           values-bg_values-bg.arsc.flat
+|   |   |   |           values-bn_values-bn.arsc.flat
+|   |   |   |           values-bs_values-bs.arsc.flat
+|   |   |   |           values-ca_values-ca.arsc.flat
+|   |   |   |           values-cs_values-cs.arsc.flat
+|   |   |   |           values-da_values-da.arsc.flat
+|   |   |   |           values-de_values-de.arsc.flat
+|   |   |   |           values-el_values-el.arsc.flat
+|   |   |   |           values-en-rAU_values-en-rAU.arsc.flat
+|   |   |   |           values-en-rCA_values-en-rCA.arsc.flat
+|   |   |   |           values-en-rGB_values-en-rGB.arsc.flat
+|   |   |   |           values-en-rIN_values-en-rIN.arsc.flat
+|   |   |   |           values-en-rXC_values-en-rXC.arsc.flat
+|   |   |   |           values-es-rUS_values-es-rUS.arsc.flat
+|   |   |   |           values-es_values-es.arsc.flat
+|   |   |   |           values-et_values-et.arsc.flat
+|   |   |   |           values-eu_values-eu.arsc.flat
+|   |   |   |           values-fa_values-fa.arsc.flat
+|   |   |   |           values-fi_values-fi.arsc.flat
+|   |   |   |           values-fr-rCA_values-fr-rCA.arsc.flat
+|   |   |   |           values-fr_values-fr.arsc.flat
+|   |   |   |           values-gl_values-gl.arsc.flat
+|   |   |   |           values-gu_values-gu.arsc.flat
+|   |   |   |           values-h320dp-port-v13_values-h320dp-port-v13.arsc.flat
+|   |   |   |           values-h360dp-land-v13_values-h360dp-land-v13.arsc.flat
+|   |   |   |           values-h480dp-land-v13_values-h480dp-land-v13.arsc.flat
+|   |   |   |           values-h550dp-port-v13_values-h550dp-port-v13.arsc.flat
+|   |   |   |           values-h720dp-v13_values-h720dp-v13.arsc.flat
+|   |   |   |           values-hdpi-v4_values-hdpi-v4.arsc.flat
+|   |   |   |           values-hi_values-hi.arsc.flat
+|   |   |   |           values-hr_values-hr.arsc.flat
+|   |   |   |           values-hu_values-hu.arsc.flat
+|   |   |   |           values-hy_values-hy.arsc.flat
+|   |   |   |           values-in_values-in.arsc.flat
+|   |   |   |           values-is_values-is.arsc.flat
+|   |   |   |           values-it_values-it.arsc.flat
+|   |   |   |           values-iw_values-iw.arsc.flat
+|   |   |   |           values-ja_values-ja.arsc.flat
+|   |   |   |           values-ka_values-ka.arsc.flat
+|   |   |   |           values-kk_values-kk.arsc.flat
+|   |   |   |           values-km_values-km.arsc.flat
+|   |   |   |           values-kn_values-kn.arsc.flat
+|   |   |   |           values-ko_values-ko.arsc.flat
+|   |   |   |           values-ky_values-ky.arsc.flat
+|   |   |   |           values-land_values-land.arsc.flat
+|   |   |   |           values-large-v4_values-large-v4.arsc.flat
+|   |   |   |           values-ldltr-v21_values-ldltr-v21.arsc.flat
+|   |   |   |           values-ldrtl-v17_values-ldrtl-v17.arsc.flat
+|   |   |   |           values-lo_values-lo.arsc.flat
+|   |   |   |           values-lt_values-lt.arsc.flat
+|   |   |   |           values-lv_values-lv.arsc.flat
+|   |   |   |           values-mk_values-mk.arsc.flat
+|   |   |   |           values-ml_values-ml.arsc.flat
+|   |   |   |           values-mn_values-mn.arsc.flat
+|   |   |   |           values-mr_values-mr.arsc.flat
+|   |   |   |           values-ms_values-ms.arsc.flat
+|   |   |   |           values-my_values-my.arsc.flat
+|   |   |   |           values-nb_values-nb.arsc.flat
+|   |   |   |           values-ne_values-ne.arsc.flat
+|   |   |   |           values-night-v8_values-night-v8.arsc.flat
+|   |   |   |           values-nl_values-nl.arsc.flat
+|   |   |   |           values-or_values-or.arsc.flat
+|   |   |   |           values-pa_values-pa.arsc.flat
+|   |   |   |           values-pl_values-pl.arsc.flat
+|   |   |   |           values-port_values-port.arsc.flat
+|   |   |   |           values-pt-rBR_values-pt-rBR.arsc.flat
+|   |   |   |           values-pt-rPT_values-pt-rPT.arsc.flat
+|   |   |   |           values-pt_values-pt.arsc.flat
+|   |   |   |           values-ro_values-ro.arsc.flat
+|   |   |   |           values-ru_values-ru.arsc.flat
+|   |   |   |           values-si_values-si.arsc.flat
+|   |   |   |           values-sk_values-sk.arsc.flat
+|   |   |   |           values-sl_values-sl.arsc.flat
+|   |   |   |           values-small-v4_values-small-v4.arsc.flat
+|   |   |   |           values-sq_values-sq.arsc.flat
+|   |   |   |           values-sr_values-sr.arsc.flat
+|   |   |   |           values-sv_values-sv.arsc.flat
+|   |   |   |           values-sw600dp-v13_values-sw600dp-v13.arsc.flat
+|   |   |   |           values-sw_values-sw.arsc.flat
+|   |   |   |           values-ta_values-ta.arsc.flat
+|   |   |   |           values-te_values-te.arsc.flat
+|   |   |   |           values-th_values-th.arsc.flat
+|   |   |   |           values-tl_values-tl.arsc.flat
+|   |   |   |           values-tr_values-tr.arsc.flat
+|   |   |   |           values-uk_values-uk.arsc.flat
+|   |   |   |           values-ur_values-ur.arsc.flat
+|   |   |   |           values-uz_values-uz.arsc.flat
+|   |   |   |           values-v16_values-v16.arsc.flat
+|   |   |   |           values-v17_values-v17.arsc.flat
+|   |   |   |           values-v18_values-v18.arsc.flat
+|   |   |   |           values-v21_values-v21.arsc.flat
+|   |   |   |           values-v22_values-v22.arsc.flat
+|   |   |   |           values-v23_values-v23.arsc.flat
+|   |   |   |           values-v24_values-v24.arsc.flat
+|   |   |   |           values-v25_values-v25.arsc.flat
+|   |   |   |           values-v26_values-v26.arsc.flat
+|   |   |   |           values-v28_values-v28.arsc.flat
+|   |   |   |           values-v31_values-v31.arsc.flat
+|   |   |   |           values-v34_values-v34.arsc.flat
+|   |   |   |           values-vi_values-vi.arsc.flat
+|   |   |   |           values-w320dp-land-v13_values-w320dp-land-v13.arsc.flat
+|   |   |   |           values-w360dp-port-v13_values-w360dp-port-v13.arsc.flat
+|   |   |   |           values-w400dp-port-v13_values-w400dp-port-v13.arsc.flat
+|   |   |   |           values-w600dp-land-v13_values-w600dp-land-v13.arsc.flat
+|   |   |   |           values-watch-v20_values-watch-v20.arsc.flat
+|   |   |   |           values-watch-v21_values-watch-v21.arsc.flat
+|   |   |   |           values-xlarge-v4_values-xlarge-v4.arsc.flat
+|   |   |   |           values-zh-rCN_values-zh-rCN.arsc.flat
+|   |   |   |           values-zh-rHK_values-zh-rHK.arsc.flat
+|   |   |   |           values-zh-rTW_values-zh-rTW.arsc.flat
+|   |   |   |           values-zu_values-zu.arsc.flat
+|   |   |   |           values_values.arsc.flat
+|   |   |   |           
+|   |   |   +---merged_res_blame_folder
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   |           +---multi-v2
+|   |   |   |           |       debug.json
+|   |   |   |           |       values-af.json
+|   |   |   |           |       values-am.json
+|   |   |   |           |       values-ar.json
+|   |   |   |           |       values-as.json
+|   |   |   |           |       values-az.json
+|   |   |   |           |       values-b+es+419.json
+|   |   |   |           |       values-b+sr+Latn.json
+|   |   |   |           |       values-be.json
+|   |   |   |           |       values-bg.json
+|   |   |   |           |       values-bn.json
+|   |   |   |           |       values-bs.json
+|   |   |   |           |       values-ca.json
+|   |   |   |           |       values-cs.json
+|   |   |   |           |       values-da.json
+|   |   |   |           |       values-de.json
+|   |   |   |           |       values-el.json
+|   |   |   |           |       values-en-rAU.json
+|   |   |   |           |       values-en-rCA.json
+|   |   |   |           |       values-en-rGB.json
+|   |   |   |           |       values-en-rIN.json
+|   |   |   |           |       values-en-rXC.json
+|   |   |   |           |       values-es-rUS.json
+|   |   |   |           |       values-es.json
+|   |   |   |           |       values-et.json
+|   |   |   |           |       values-eu.json
+|   |   |   |           |       values-fa.json
+|   |   |   |           |       values-fi.json
+|   |   |   |           |       values-fr-rCA.json
+|   |   |   |           |       values-fr.json
+|   |   |   |           |       values-gl.json
+|   |   |   |           |       values-gu.json
+|   |   |   |           |       values-h320dp-port-v13.json
+|   |   |   |           |       values-h360dp-land-v13.json
+|   |   |   |           |       values-h480dp-land-v13.json
+|   |   |   |           |       values-h550dp-port-v13.json
+|   |   |   |           |       values-h720dp-v13.json
+|   |   |   |           |       values-hdpi-v4.json
+|   |   |   |           |       values-hi.json
+|   |   |   |           |       values-hr.json
+|   |   |   |           |       values-hu.json
+|   |   |   |           |       values-hy.json
+|   |   |   |           |       values-in.json
+|   |   |   |           |       values-is.json
+|   |   |   |           |       values-it.json
+|   |   |   |           |       values-iw.json
+|   |   |   |           |       values-ja.json
+|   |   |   |           |       values-ka.json
+|   |   |   |           |       values-kk.json
+|   |   |   |           |       values-km.json
+|   |   |   |           |       values-kn.json
+|   |   |   |           |       values-ko.json
+|   |   |   |           |       values-ky.json
+|   |   |   |           |       values-land.json
+|   |   |   |           |       values-large-v4.json
+|   |   |   |           |       values-ldltr-v21.json
+|   |   |   |           |       values-ldrtl-v17.json
+|   |   |   |           |       values-lo.json
+|   |   |   |           |       values-lt.json
+|   |   |   |           |       values-lv.json
+|   |   |   |           |       values-mk.json
+|   |   |   |           |       values-ml.json
+|   |   |   |           |       values-mn.json
+|   |   |   |           |       values-mr.json
+|   |   |   |           |       values-ms.json
+|   |   |   |           |       values-my.json
+|   |   |   |           |       values-nb.json
+|   |   |   |           |       values-ne.json
+|   |   |   |           |       values-night-v8.json
+|   |   |   |           |       values-nl.json
+|   |   |   |           |       values-or.json
+|   |   |   |           |       values-pa.json
+|   |   |   |           |       values-pl.json
+|   |   |   |           |       values-port.json
+|   |   |   |           |       values-pt-rBR.json
+|   |   |   |           |       values-pt-rPT.json
+|   |   |   |           |       values-pt.json
+|   |   |   |           |       values-ro.json
+|   |   |   |           |       values-ru.json
+|   |   |   |           |       values-si.json
+|   |   |   |           |       values-sk.json
+|   |   |   |           |       values-sl.json
+|   |   |   |           |       values-small-v4.json
+|   |   |   |           |       values-sq.json
+|   |   |   |           |       values-sr.json
+|   |   |   |           |       values-sv.json
+|   |   |   |           |       values-sw.json
+|   |   |   |           |       values-sw600dp-v13.json
+|   |   |   |           |       values-ta.json
+|   |   |   |           |       values-te.json
+|   |   |   |           |       values-th.json
+|   |   |   |           |       values-tl.json
+|   |   |   |           |       values-tr.json
+|   |   |   |           |       values-uk.json
+|   |   |   |           |       values-ur.json
+|   |   |   |           |       values-uz.json
+|   |   |   |           |       values-v16.json
+|   |   |   |           |       values-v17.json
+|   |   |   |           |       values-v18.json
+|   |   |   |           |       values-v21.json
+|   |   |   |           |       values-v22.json
+|   |   |   |           |       values-v23.json
+|   |   |   |           |       values-v24.json
+|   |   |   |           |       values-v25.json
+|   |   |   |           |       values-v26.json
+|   |   |   |           |       values-v28.json
+|   |   |   |           |       values-v31.json
+|   |   |   |           |       values-v34.json
+|   |   |   |           |       values-vi.json
+|   |   |   |           |       values-w320dp-land-v13.json
+|   |   |   |           |       values-w360dp-port-v13.json
+|   |   |   |           |       values-w400dp-port-v13.json
+|   |   |   |           |       values-w600dp-land-v13.json
+|   |   |   |           |       values-watch-v20.json
+|   |   |   |           |       values-watch-v21.json
+|   |   |   |           |       values-xlarge-v4.json
+|   |   |   |           |       values-zh-rCN.json
+|   |   |   |           |       values-zh-rHK.json
+|   |   |   |           |       values-zh-rTW.json
+|   |   |   |           |       values-zu.json
+|   |   |   |           |       values.json
+|   |   |   |           |       
+|   |   |   |           \---single
+|   |   |   |                   debug.json
+|   |   |   |                   
+|   |   |   +---merged_shaders
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---mixed_scope_dex_archive
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---navigation_json
+|   |   |   |   \---debug
+|   |   |   |           navigation.json
+|   |   |   |           
+|   |   |   +---packaged_manifests
+|   |   |   |   \---debug
+|   |   |   |           AndroidManifest.xml
+|   |   |   |           output-metadata.json
+|   |   |   |           
+|   |   |   +---packaged_res
+|   |   |   |   \---debug
+|   |   |   |       +---anim
+|   |   |   |       +---drawable
+|   |   |   |       +---layout
+|   |   |   |       |       activity_main.xml
+|   |   |   |       |       
+|   |   |   |       +---menu
+|   |   |   |       +---mipmap
+|   |   |   |       |       ic_launcher.png
+|   |   |   |       |       
+|   |   |   |       +---navigation
+|   |   |   |       +---raw
+|   |   |   |       |       notification_sound.mp3
+|   |   |   |       |       
+|   |   |   |       +---values
+|   |   |   |       |       values.xml
+|   |   |   |       |       
+|   |   |   |       \---xml
+|   |   |   +---processed_res
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   |               output-metadata.json
+|   |   |   |               resources-debug.ap_
+|   |   |   |               
+|   |   |   +---project_dex_archive
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   |           |   06be88a7f2828df843379de1662a9254121ebef165f36b6f1c6ce3b9216071d7_0.jar
+|   |   |   |           |   06be88a7f2828df843379de1662a9254121ebef165f36b6f1c6ce3b9216071d7_1.jar
+|   |   |   |           |   06be88a7f2828df843379de1662a9254121ebef165f36b6f1c6ce3b9216071d7_2.jar
+|   |   |   |           |   06be88a7f2828df843379de1662a9254121ebef165f36b6f1c6ce3b9216071d7_3.jar
+|   |   |   |           |   06be88a7f2828df843379de1662a9254121ebef165f36b6f1c6ce3b9216071d7_4.jar
+|   |   |   |           |   06be88a7f2828df843379de1662a9254121ebef165f36b6f1c6ce3b9216071d7_5.jar
+|   |   |   |           |   
+|   |   |   |           \---com
+|   |   |   |               \---todolist
+|   |   |   |                   \---app
+|   |   |   |                       |   TodoApplication.dex
+|   |   |   |                       |   
+|   |   |   |                       +---data
+|   |   |   |                       |   +---local
+|   |   |   |                       |   |   +---dao
+|   |   |   |                       |   |   |       ActivityLogDao.dex
+|   |   |   |                       |   |   |       AppSettingsDao.dex
+|   |   |   |                       |   |   |       CategoryDao.dex
+|   |   |   |                       |   |   |       FocusSessionDao.dex
+|   |   |   |                       |   |   |       MilestoneDao.dex
+|   |   |   |                       |   |   |       ProjectDao.dex
+|   |   |   |                       |   |   |       SubtaskDao.dex
+|   |   |   |                       |   |   |       TagDao.dex
+|   |   |   |                       |   |   |       TaskDao.dex
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---database
+|   |   |   |                       |   |   |       Converters.dex
+|   |   |   |                       |   |   |       DatabaseCallback.dex
+|   |   |   |                       |   |   |       TodoDatabase.dex
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   \---entity
+|   |   |   |                       |   |       |   ActivityLog.dex
+|   |   |   |                       |   |       |   AppSettings.dex
+|   |   |   |                       |   |       |   Category.dex
+|   |   |   |                       |   |       |   FocusSession.dex
+|   |   |   |                       |   |       |   Milestone.dex
+|   |   |   |                       |   |       |   Project.dex
+|   |   |   |                       |   |       |   Subtask.dex
+|   |   |   |                       |   |       |   Tag.dex
+|   |   |   |                       |   |       |   Task.dex
+|   |   |   |                       |   |       |   TaskTag.dex
+|   |   |   |                       |   |       |   
+|   |   |   |                       |   |       \---relations
+|   |   |   |                       |   |               CategoryWithStats.dex
+|   |   |   |                       |   |               ProjectWithStats.dex
+|   |   |   |                       |   |               ProjectWithTasks.dex
+|   |   |   |                       |   |               TaskWithDetails.dex
+|   |   |   |                       |   |               TaskWithSubtasks.dex
+|   |   |   |                       |   |               
+|   |   |   |                       |   +---preferences
+|   |   |   |                       |   |       AppPreferences.dex
+|   |   |   |                       |   |       
+|   |   |   |                       |   \---repository
+|   |   |   |                       |           ActivityLogRepository.dex
+|   |   |   |                       |           CategoryRepository.dex
+|   |   |   |                       |           FocusSessionRepository.dex
+|   |   |   |                       |           MilestoneRepository.dex
+|   |   |   |                       |           ProjectRepository.dex
+|   |   |   |                       |           SettingsRepository.dex
+|   |   |   |                       |           SubtaskRepository.dex
+|   |   |   |                       |           TagRepository.dex
+|   |   |   |                       |           TaskRepository.dex
+|   |   |   |                       |           
+|   |   |   |                       +---domain
+|   |   |   |                       |   +---model
+|   |   |   |                       |   |       FilterOptions.dex
+|   |   |   |                       |   |       ProjectModel.dex
+|   |   |   |                       |   |       TaskModel.dex
+|   |   |   |                       |   |       
+|   |   |   |                       |   +---usecase
+|   |   |   |                       |   |   +---backup
+|   |   |   |                       |   |   |       BackupDataUseCase.dex
+|   |   |   |                       |   |   |       RestoreDataUseCase.dex
+|   |   |   |                       |   |   |       ValidateBackupUseCase.dex
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---focus
+|   |   |   |                       |   |   |       CompleteFocusSessionUseCase.dex
+|   |   |   |                       |   |   |       GetFocusStatsUseCase.dex
+|   |   |   |                       |   |   |       StartFocusSessionUseCase.dex
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---project
+|   |   |   |                       |   |   |       ArchiveProjectUseCase.dex
+|   |   |   |                       |   |   |       CreateProjectUseCase.dex
+|   |   |   |                       |   |   |       DeleteProjectUseCase.dex
+|   |   |   |                       |   |   |       GetProjectStatsUseCase.dex
+|   |   |   |                       |   |   |       UpdateProjectUseCase.dex
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---recurring
+|   |   |   |                       |   |   |       CalculateNextDueDateUseCase.dex
+|   |   |   |                       |   |   |       CreateRecurringTaskUseCase.dex
+|   |   |   |                       |   |   |       ProcessRecurringTaskUseCase.dex
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   +---statistics
+|   |   |   |                       |   |   |       GetCategoryStatsUseCase.dex
+|   |   |   |                       |   |   |       GetOverallStatsUseCase.dex
+|   |   |   |                       |   |   |       
+|   |   |   |                       |   |   \---task
+|   |   |   |                       |   |           CompleteTaskUseCase.dex
+|   |   |   |                       |   |           CreateTaskUseCase.dex
+|   |   |   |                       |   |           DeleteTaskUseCase.dex
+|   |   |   |                       |   |           GetTasksUseCase.dex
+|   |   |   |                       |   |           MoveTaskUseCase.dex
+|   |   |   |                       |   |           UpdateTaskUseCase.dex
+|   |   |   |                       |   |           
+|   |   |   |                       |   \---util
+|   |   |   |                       |           DateCalculator.dex
+|   |   |   |                       |           RecurrenceRuleParser.dex
+|   |   |   |                       |           ValidationUtils.dex
+|   |   |   |                       |           
+|   |   |   |                       \---presentation
+|   |   |   |                           +---di
+|   |   |   |                           |       AppModule.dex
+|   |   |   |                           |       DatabaseModule.dex
+|   |   |   |                           |       RepositoryModule.dex
+|   |   |   |                           |       ViewModelFactory.dex
+|   |   |   |                           |       
+|   |   |   |                           +---service
+|   |   |   |                           |   +---backup
+|   |   |   |                           |   |       AutoBackupWorker.dex
+|   |   |   |                           |   |       BackupService.dex
+|   |   |   |                           |   |       RestoreService.dex
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---focus
+|   |   |   |                           |   |       FocusNotification.dex
+|   |   |   |                           |   |       FocusTimerService.dex
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---notification
+|   |   |   |                           |   |       DailyReminderWorker.dex
+|   |   |   |                           |   |       NotificationHelper.dex
+|   |   |   |                           |   |       NotificationReceiver.dex
+|   |   |   |                           |   |       ReminderScheduler.dex
+|   |   |   |                           |   |       
+|   |   |   |                           |   \---widget
+|   |   |   |                           |           TodoWidgetProvider.dex
+|   |   |   |                           |           TodoWidgetRemoteViewsFactory.dex
+|   |   |   |                           |           TodoWidgetService.dex
+|   |   |   |                           |           
+|   |   |   |                           +---ui
+|   |   |   |                           |   +---calendar
+|   |   |   |                           |   |   |   CalendarFragment.dex
+|   |   |   |                           |   |   |   CalendarViewModel.dex
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           CalendarDayAdapter.dex
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---category
+|   |   |   |                           |   |   |   AddEditCategoryDialog.dex
+|   |   |   |                           |   |   |   CategoryListFragment.dex
+|   |   |   |                           |   |   |   CategoryViewModel.dex
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           CategoryAdapter.dex
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---common
+|   |   |   |                           |   |       BaseFragment.dex
+|   |   |   |                           |   |       BaseViewModel.dex
+|   |   |   |                           |   |       ColorPickerDialog.dex
+|   |   |   |                           |   |       ConfirmDialog.dex
+|   |   |   |                           |   |       DateTimePickerDialog.dex
+|   |   |   |                           |   |       IconPickerDialog.dex
+|   |   |   |                           |   |       LoadingDialog.dex
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---focus
+|   |   |   |                           |   |       FocusModeActivity.dex
+|   |   |   |                           |   |       FocusStatsFragment.dex
+|   |   |   |                           |   |       FocusTimerView.dex
+|   |   |   |                           |   |       FocusViewModel.dex
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---home
+|   |   |   |                           |   |   |   HomeFragment.dex
+|   |   |   |                           |   |   |   HomeViewModel.dex
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           TaskAdapter.dex
+|   |   |   |                           |   |           TaskViewHolder.dex
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---main
+|   |   |   |                           |   |       MainActivity.dex
+|   |   |   |                           |   |       MainViewModel.dex
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---project
+|   |   |   |                           |   |   |   AddEditProjectFragment.dex
+|   |   |   |                           |   |   |   ProjectDetailFragment.dex
+|   |   |   |                           |   |   |   ProjectListFragment.dex
+|   |   |   |                           |   |   |   ProjectViewModel.dex
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   +---adapter
+|   |   |   |                           |   |   |       KanbanColumnAdapter.dex
+|   |   |   |                           |   |   |       MilestoneAdapter.dex
+|   |   |   |                           |   |   |       ProjectAdapter.dex
+|   |   |   |                           |   |   |       
+|   |   |   |                           |   |   \---view
+|   |   |   |                           |   |           ProjectCalendarView.dex
+|   |   |   |                           |   |           ProjectKanbanView.dex
+|   |   |   |                           |   |           ProjectListView.dex
+|   |   |   |                           |   |           ProjectTimelineView.dex
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---search
+|   |   |   |                           |   |   |   FilterBottomSheet.dex
+|   |   |   |                           |   |   |   SearchFragment.dex
+|   |   |   |                           |   |   |   SearchViewModel.dex
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           SearchResultAdapter.dex
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---settings
+|   |   |   |                           |   |       BackupRestoreFragment.dex
+|   |   |   |                           |   |       NotificationSettingsFragment.dex
+|   |   |   |                           |   |       SettingsActivity.dex
+|   |   |   |                           |   |       SettingsFragment.dex
+|   |   |   |                           |   |       SettingsViewModel.dex
+|   |   |   |                           |   |       ThemeSettingsFragment.dex
+|   |   |   |                           |   |       
+|   |   |   |                           |   +---statistics
+|   |   |   |                           |   |   |   StatisticsFragment.dex
+|   |   |   |                           |   |   |   StatisticsViewModel.dex
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---chart
+|   |   |   |                           |   |           CategoryPieChartView.dex
+|   |   |   |                           |   |           ChartHelper.dex
+|   |   |   |                           |   |           CompletionChartView.dex
+|   |   |   |                           |   |           
+|   |   |   |                           |   +---task
+|   |   |   |                           |   |   |   AddEditTaskFragment.dex
+|   |   |   |                           |   |   |   TaskDetailFragment.dex
+|   |   |   |                           |   |   |   TaskListFragment.dex
+|   |   |   |                           |   |   |   TaskViewModel.dex
+|   |   |   |                           |   |   |   
+|   |   |   |                           |   |   \---adapter
+|   |   |   |                           |   |           SubtaskAdapter.dex
+|   |   |   |                           |   |           TagAdapter.dex
+|   |   |   |                           |   |           
+|   |   |   |                           |   \---widget
+|   |   |   |                           |           CategoryChipView.dex
+|   |   |   |                           |           EmptyStateView.dex
+|   |   |   |                           |           PriorityView.dex
+|   |   |   |                           |           ProgressCircleView.dex
+|   |   |   |                           |           SwipeActionView.dex
+|   |   |   |                           |           TaskItemView.dex
+|   |   |   |                           |           
+|   |   |   |                           \---util
+|   |   |   |                                   ColorUtils.dex
+|   |   |   |                                   Constants.dex
+|   |   |   |                                   DateUtils.dex
+|   |   |   |                                   FileUtils.dex
+|   |   |   |                                   FormatUtils.dex
+|   |   |   |                                   JsonUtils.dex
+|   |   |   |                                   KeyboardUtils.dex
+|   |   |   |                                   PermissionUtils.dex
+|   |   |   |                                   RecurrenceUtils.dex
+|   |   |   |                                   TimeUtils.dex
+|   |   |   |                                   ValidationUtils.dex
+|   |   |   |                                   ViewUtils.dex
+|   |   |   |                                   
+|   |   |   +---runtime_symbol_list
+|   |   |   |   \---debug
+|   |   |   |           R.txt
+|   |   |   |           
+|   |   |   +---signing_config_versions
+|   |   |   |   \---debug
+|   |   |   |           signing-config-versions.json
+|   |   |   |           
+|   |   |   +---source_set_path_map
+|   |   |   |   \---debug
+|   |   |   |           file-map.txt
+|   |   |   |           
+|   |   |   +---stable_resource_ids_file
+|   |   |   |   \---debug
+|   |   |   |           stableIds.txt
+|   |   |   |           
+|   |   |   +---sub_project_dex_archive
+|   |   |   |   \---debug
+|   |   |   |       \---out
+|   |   |   +---symbol_list_with_package_name
+|   |   |   |   \---debug
+|   |   |   |           package-aware-r.txt
+|   |   |   |           
+|   |   |   +---validate_signing_config
+|   |   |   |   \---debug
+|   |   |   \---variant_model
+|   |   |       \---debug
+|   |   |               variant_model.json
+|   |   |               
+|   |   +---outputs
+|   |   |   \---logs
+|   |   |           manifest-merger-debug-report.txt
+|   |   |           
+|   |   \---tmp
+|   |       \---compileDebugJavaWithJavac
+|   |           |   previous-compilation-data.bin
+|   |           |   
+|   |           \---compileTransaction
+|   |               +---backup-dir
+|   |               \---stash-dir
+|   |                       ActivityLog.class.uniqueId6
+|   |                       Category.class.uniqueId0
+|   |                       Constants.class.uniqueId4
+|   |                       Milestone.class.uniqueId7
+|   |                       Project.class.uniqueId8
+|   |                       Subtask.class.uniqueId1
+|   |                       Tag.class.uniqueId2
+|   |                       Task.class.uniqueId5
+|   |                       TaskTag.class.uniqueId3
+|   |                       
+|   \---src
+|       +---androidTest
+|       |   \---java
+|       |       \---com
+|       |           \---todolist
+|       |               \---app
+|       |                   \---ui
+|       |                           MainActivityTest.java
+|       |                           
+|       +---main
+|       |   |   AndroidManifest.xml
+|       |   |   
+|       |   +---java
+|       |   |   \---com
+|       |   |       \---todolist
+|       |   |           \---app
+|       |   |               |   TodoApplication.java
+|       |   |               |   
+|       |   |               +---data
+|       |   |               |   +---local
+|       |   |               |   |   +---dao
+|       |   |               |   |   |       ActivityLogDao.java
+|       |   |               |   |   |       AppSettingsDao.java
+|       |   |               |   |   |       CategoryDao.java
+|       |   |               |   |   |       FocusSessionDao.java
+|       |   |               |   |   |       MilestoneDao.java
+|       |   |               |   |   |       ProjectDao.java
+|       |   |               |   |   |       SubtaskDao.java
+|       |   |               |   |   |       TagDao.java
+|       |   |               |   |   |       TaskDao.java
+|       |   |               |   |   |       
+|       |   |               |   |   +---database
+|       |   |               |   |   |       Converters.java
+|       |   |               |   |   |       DatabaseCallback.java
+|       |   |               |   |   |       TodoDatabase.java
+|       |   |               |   |   |       
+|       |   |               |   |   \---entity
+|       |   |               |   |       |   ActivityLog.java
+|       |   |               |   |       |   AppSettings.java
+|       |   |               |   |       |   Category.java
+|       |   |               |   |       |   FocusSession.java
+|       |   |               |   |       |   Milestone.java
+|       |   |               |   |       |   Project.java
+|       |   |               |   |       |   Subtask.java
+|       |   |               |   |       |   Tag.java
+|       |   |               |   |       |   Task.java
+|       |   |               |   |       |   TaskTag.java
+|       |   |               |   |       |   
+|       |   |               |   |       \---relations
+|       |   |               |   |               CategoryWithStats.java
+|       |   |               |   |               ProjectWithStats.java
+|       |   |               |   |               ProjectWithTasks.java
+|       |   |               |   |               TaskWithDetails.java
+|       |   |               |   |               TaskWithSubtasks.java
+|       |   |               |   |               
+|       |   |               |   +---preferences
+|       |   |               |   |       AppPreferences.java
+|       |   |               |   |       
+|       |   |               |   \---repository
+|       |   |               |           ActivityLogRepository.java
+|       |   |               |           CategoryRepository.java
+|       |   |               |           FocusSessionRepository.java
+|       |   |               |           MilestoneRepository.java
+|       |   |               |           ProjectRepository.java
+|       |   |               |           SettingsRepository.java
+|       |   |               |           SubtaskRepository.java
+|       |   |               |           TagRepository.java
+|       |   |               |           TaskRepository.java
+|       |   |               |           
+|       |   |               +---domain
+|       |   |               |   +---model
+|       |   |               |   |       FilterOptions.java
+|       |   |               |   |       ProjectModel.java
+|       |   |               |   |       TaskModel.java
+|       |   |               |   |       
+|       |   |               |   +---usecase
+|       |   |               |   |   +---backup
+|       |   |               |   |   |       BackupDataUseCase.java
+|       |   |               |   |   |       RestoreDataUseCase.java
+|       |   |               |   |   |       ValidateBackupUseCase.java
+|       |   |               |   |   |       
+|       |   |               |   |   +---focus
+|       |   |               |   |   |       CompleteFocusSessionUseCase.java
+|       |   |               |   |   |       GetFocusStatsUseCase.java
+|       |   |               |   |   |       StartFocusSessionUseCase.java
+|       |   |               |   |   |       
+|       |   |               |   |   +---project
+|       |   |               |   |   |       ArchiveProjectUseCase.java
+|       |   |               |   |   |       CreateProjectUseCase.java
+|       |   |               |   |   |       DeleteProjectUseCase.java
+|       |   |               |   |   |       GetProjectStatsUseCase.java
+|       |   |               |   |   |       UpdateProjectUseCase.java
+|       |   |               |   |   |       
+|       |   |               |   |   +---recurring
+|       |   |               |   |   |       CalculateNextDueDateUseCase.java
+|       |   |               |   |   |       CreateRecurringTaskUseCase.java
+|       |   |               |   |   |       ProcessRecurringTaskUseCase.java
+|       |   |               |   |   |       
+|       |   |               |   |   +---statistics
+|       |   |               |   |   |       GetCategoryStatsUseCase.java
+|       |   |               |   |   |       GetOverallStatsUseCase.java
+|       |   |               |   |   |       
+|       |   |               |   |   \---task
+|       |   |               |   |           CompleteTaskUseCase.java
+|       |   |               |   |           CreateTaskUseCase.java
+|       |   |               |   |           DeleteTaskUseCase.java
+|       |   |               |   |           GetTasksUseCase.java
+|       |   |               |   |           MoveTaskUseCase.java
+|       |   |               |   |           UpdateTaskUseCase.java
+|       |   |               |   |           
+|       |   |               |   \---util
+|       |   |               |           DateCalculator.java
+|       |   |               |           RecurrenceRuleParser.java
+|       |   |               |           ValidationUtils.java
+|       |   |               |           
+|       |   |               \---presentation
+|       |   |                   +---di
+|       |   |                   |       AppModule.java
+|       |   |                   |       DatabaseModule.java
+|       |   |                   |       RepositoryModule.java
+|       |   |                   |       ViewModelFactory.java
+|       |   |                   |       
+|       |   |                   +---service
+|       |   |                   |   +---backup
+|       |   |                   |   |       AutoBackupWorker.java
+|       |   |                   |   |       BackupService.java
+|       |   |                   |   |       RestoreService.java
+|       |   |                   |   |       
+|       |   |                   |   +---focus
+|       |   |                   |   |       FocusNotification.java
+|       |   |                   |   |       FocusTimerService.java
+|       |   |                   |   |       
+|       |   |                   |   +---notification
+|       |   |                   |   |       DailyReminderWorker.java
+|       |   |                   |   |       NotificationHelper.java
+|       |   |                   |   |       NotificationReceiver.java
+|       |   |                   |   |       ReminderScheduler.java
+|       |   |                   |   |       
+|       |   |                   |   \---widget
+|       |   |                   |           TodoWidgetProvider.java
+|       |   |                   |           TodoWidgetRemoteViewsFactory.java
+|       |   |                   |           TodoWidgetService.java
+|       |   |                   |           
+|       |   |                   +---ui
+|       |   |                   |   +---calendar
+|       |   |                   |   |   |   CalendarFragment.java
+|       |   |                   |   |   |   CalendarViewModel.java
+|       |   |                   |   |   |   
+|       |   |                   |   |   \---adapter
+|       |   |                   |   |           CalendarDayAdapter.java
+|       |   |                   |   |           
+|       |   |                   |   +---category
+|       |   |                   |   |   |   AddEditCategoryDialog.java
+|       |   |                   |   |   |   CategoryListFragment.java
+|       |   |                   |   |   |   CategoryViewModel.java
+|       |   |                   |   |   |   
+|       |   |                   |   |   \---adapter
+|       |   |                   |   |           CategoryAdapter.java
+|       |   |                   |   |           
+|       |   |                   |   +---common
+|       |   |                   |   |       BaseFragment.java
+|       |   |                   |   |       BaseViewModel.java
+|       |   |                   |   |       ColorPickerDialog.java
+|       |   |                   |   |       ConfirmDialog.java
+|       |   |                   |   |       DateTimePickerDialog.java
+|       |   |                   |   |       IconPickerDialog.java
+|       |   |                   |   |       LoadingDialog.java
+|       |   |                   |   |       
+|       |   |                   |   +---focus
+|       |   |                   |   |       FocusModeActivity.java
+|       |   |                   |   |       FocusStatsFragment.java
+|       |   |                   |   |       FocusTimerView.java
+|       |   |                   |   |       FocusViewModel.java
+|       |   |                   |   |       
+|       |   |                   |   +---home
+|       |   |                   |   |   |   HomeFragment.java
+|       |   |                   |   |   |   HomeViewModel.java
+|       |   |                   |   |   |   
+|       |   |                   |   |   \---adapter
+|       |   |                   |   |           TaskAdapter.java
+|       |   |                   |   |           TaskViewHolder.java
+|       |   |                   |   |           
+|       |   |                   |   +---main
+|       |   |                   |   |       MainActivity.java
+|       |   |                   |   |       MainViewModel.java
+|       |   |                   |   |       
+|       |   |                   |   +---project
+|       |   |                   |   |   |   AddEditProjectFragment.java
+|       |   |                   |   |   |   ProjectDetailFragment.java
+|       |   |                   |   |   |   ProjectListFragment.java
+|       |   |                   |   |   |   ProjectViewModel.java
+|       |   |                   |   |   |   
+|       |   |                   |   |   +---adapter
+|       |   |                   |   |   |       KanbanColumnAdapter.java
+|       |   |                   |   |   |       MilestoneAdapter.java
+|       |   |                   |   |   |       ProjectAdapter.java
+|       |   |                   |   |   |       
+|       |   |                   |   |   \---view
+|       |   |                   |   |           ProjectCalendarView.java
+|       |   |                   |   |           ProjectKanbanView.java
+|       |   |                   |   |           ProjectListView.java
+|       |   |                   |   |           ProjectTimelineView.java
+|       |   |                   |   |           
+|       |   |                   |   +---search
+|       |   |                   |   |   |   FilterBottomSheet.java
+|       |   |                   |   |   |   SearchFragment.java
+|       |   |                   |   |   |   SearchViewModel.java
+|       |   |                   |   |   |   
+|       |   |                   |   |   \---adapter
+|       |   |                   |   |           SearchResultAdapter.java
+|       |   |                   |   |           
+|       |   |                   |   +---settings
+|       |   |                   |   |       BackupRestoreFragment.java
+|       |   |                   |   |       NotificationSettingsFragment.java
+|       |   |                   |   |       SettingsActivity.java
+|       |   |                   |   |       SettingsFragment.java
+|       |   |                   |   |       SettingsViewModel.java
+|       |   |                   |   |       ThemeSettingsFragment.java
+|       |   |                   |   |       
+|       |   |                   |   +---statistics
+|       |   |                   |   |   |   StatisticsFragment.java
+|       |   |                   |   |   |   StatisticsViewModel.java
+|       |   |                   |   |   |   
+|       |   |                   |   |   \---chart
+|       |   |                   |   |           CategoryPieChartView.java
+|       |   |                   |   |           ChartHelper.java
+|       |   |                   |   |           CompletionChartView.java
+|       |   |                   |   |           
+|       |   |                   |   +---task
+|       |   |                   |   |   |   AddEditTaskFragment.java
+|       |   |                   |   |   |   TaskDetailFragment.java
+|       |   |                   |   |   |   TaskListFragment.java
+|       |   |                   |   |   |   TaskViewModel.java
+|       |   |                   |   |   |   
+|       |   |                   |   |   \---adapter
+|       |   |                   |   |           SubtaskAdapter.java
+|       |   |                   |   |           TagAdapter.java
+|       |   |                   |   |           
+|       |   |                   |   \---widget
+|       |   |                   |           CategoryChipView.java
+|       |   |                   |           EmptyStateView.java
+|       |   |                   |           PriorityView.java
+|       |   |                   |           ProgressCircleView.java
+|       |   |                   |           SwipeActionView.java
+|       |   |                   |           TaskItemView.java
+|       |   |                   |           
+|       |   |                   \---util
+|       |   |                           ColorUtils.java
+|       |   |                           Constants.java
+|       |   |                           DateUtils.java
+|       |   |                           FileUtils.java
+|       |   |                           FormatUtils.java
+|       |   |                           JsonUtils.java
+|       |   |                           KeyboardUtils.java
+|       |   |                           PermissionUtils.java
+|       |   |                           RecurrenceUtils.java
+|       |   |                           TimeUtils.java
+|       |   |                           ValidationUtils.java
+|       |   |                           ViewUtils.java
+|       |   |                           
+|       |   \---res
+|       |       +---anim
+|       |       +---drawable
+|       |       +---layout
+|       |       |       activity_main.xml
+|       |       |       
+|       |       +---menu
+|       |       +---mipmap
+|       |       |       ic_launcher.png
+|       |       |       
+|       |       +---navigation
+|       |       +---raw
+|       |       |       notification_sound.mp3
+|       |       |       
+|       |       +---values
+|       |       |       arrays.xml
+|       |       |       attrs.xml
+|       |       |       colors.xml
+|       |       |       dimens.xml
+|       |       |       strings.xml
+|       |       |       styles.xml
+|       |       |       themes.xml
+|       |       |       
+|       |       +---values-night
+|       |       |       colors.xml
+|       |       |       themes.xml
+|       |       |       
+|       |       +---values-vi
+|       |       |       strings.xml
+|       |       |       
+|       |       \---xml
+|       \---test
+|           \---java
+|               \---com
+|                   \---todolist
+|                       \---app
+|                           \---data
+|                               \---repository
+|                                       TaskRepositoryTest.java
+|                                       
+\---gradle
+    \---wrapper
+            gradle-wrapper.properties
+            

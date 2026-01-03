@@ -1,3 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- App Name -->
     <string name="app_name">Todo List App</string>
+
+    <!-- Common -->
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+    <string name="delete">Xóa</string>
+    <string name="edit">Sửa</string>
+    <string name="ok">OK</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+    <string name="close">Đóng</string>
+    <string name="loading">Đang tải...</string>
+    <string name="error">Lỗi</string>
+    <string name="success">Thành công</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_projects">Dự án</string>
+    <string name="nav_categories">Danh mục</string>
+    <string name="nav_statistics">Thống kê</string>
+    <string name="nav_settings">Cài đặt</string>
+
+    <!-- Tasks -->
+    <string name="task_title">Tiêu đề</string>
+    <string name="task_description">Mô tả</string>
+    <string name="task_priority">Độ ưu tiên</string>
+    <string name="task_due_date">Hạn chót</string>
+    <string name="task_reminder">Nhắc nhở</string>
+    <string name="add_task">Thêm công việc</string>
+    <string name="edit_task">Sửa công việc</string>
+    <string name="delete_task">Xóa công việc</string>
+    <string name="complete_task">Hoàn thành</string>
+    <string name="no_tasks">Chưa có công việc nào</string>
+
+    <!-- Projects -->
+    <string name="add_project">Thêm dự án</string>
+    <string name="edit_project">Sửa dự án</string>
+    <string name="delete_project">Xóa dự án</string>
+    <string name="no_projects">Chưa có dự án nào</string>
+
+    <!-- Categories -->
+    <string name="add_category">Thêm danh mục</string>
+    <string name="edit_category">Sửa danh mục</string>
+    <string name="delete_category">Xóa danh mục</string>
+    <string name="no_categories">Chưa có danh mục nào</string>
+
+    <!-- Priority -->
+    <string name="priority_high">Cao</string>
+    <string name="priority_medium">Trung bình</string>
+    <string name="priority_low">Thấp</string>
+
+    <!-- Status -->
+    <string name="status_pending">Đang chờ</string>
+    <string name="status_in_progress">Đang làm</string>
+    <string name="status_completed">Hoàn thành</string>
+
+    <!-- Messages -->
+    <string name="task_created">Đã tạo công việc</string>
+    <string name="task_updated">Đã cập nhật công việc</string>
+    <string name="task_deleted">Đã xóa công việc</string>
+    <string name="confirm_delete">Bạn có chắc muốn xóa? </string>
+
+    <!-- TODO: Team members can add more strings as needed -->
 </resources>
