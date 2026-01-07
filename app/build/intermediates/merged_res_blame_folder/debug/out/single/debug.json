@@ -1,22 +1,30 @@
 [
     {
-        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "com.todolist.app-merged_res-46:/navigation_nav_graph.xml.flat",
-        "source": "com.todolist.app-main-48:/navigation/nav_graph.xml"
+        "merged": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\navigation\\nav_graph.xml"
+        "merged": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\layout_item_task.xml.flat",
+        "source": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\layout\\item_task.xml"
     },
     {
-        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\raw_notification_sound.mp3.flat",
-        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\raw\\notification_sound.mp3"
+        "merged": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\mipmap_ic_launcher.png.flat",
+        "source": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\mipmap\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\mipmap_ic_launcher.png.flat",
-        "source": "C:\\Users\\Huy\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\mipmap\\ic_launcher.png"
+        "merged": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\layout_fragment_task_list.xml.flat",
+        "source": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\layout\\fragment_task_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-merged_res-46:\\raw_notification_sound.mp3.flat",
+        "source": "C:\\Users\\Long\\.gradle\\daemon\\8.2\\com.todolist.app-main-48:\\raw\\notification_sound.mp3"
+    },
+    {
+        "merged": "com.todolist.app-merged_res-46:/layout_fragment_task_list.xml.flat",
+        "source": "com.todolist.app-main-48:/layout/fragment_task_list.xml"
     }
 ]

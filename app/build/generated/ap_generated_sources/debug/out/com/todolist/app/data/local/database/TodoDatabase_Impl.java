@@ -11,6 +11,16 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
+import com.todolist.app.data.local.dao.ActivityLogDao;
+import com.todolist.app.data.local.dao.ActivityLogDao_Impl;
+import com.todolist.app.data.local.dao.CategoryDao;
+import com.todolist.app.data.local.dao.CategoryDao_Impl;
+import com.todolist.app.data.local.dao.ProjectDao;
+import com.todolist.app.data.local.dao.ProjectDao_Impl;
+import com.todolist.app.data.local.dao.SubtaskDao;
+import com.todolist.app.data.local.dao.SubtaskDao_Impl;
+import com.todolist.app.data.local.dao.TaskDao;
+import com.todolist.app.data.local.dao.TaskDao_Impl;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
@@ -25,6 +35,16 @@ import java.util.Set;
 
 @SuppressWarnings({"unchecked", "deprecation"})
 public final class TodoDatabase_Impl extends TodoDatabase {
+  private volatile TaskDao _taskDao;
+
+  private volatile SubtaskDao _subtaskDao;
+
+  private volatile ProjectDao _projectDao;
+
+  private volatile CategoryDao _categoryDao;
+
+  private volatile ActivityLogDao _activityLogDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
@@ -49,8 +69,16 @@ public final class TodoDatabase_Impl extends TodoDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `milestones` (`milestone_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `project_id` INTEGER NOT NULL, `name` TEXT, `description` TEXT, `due_date` INTEGER, `is_completed` INTEGER NOT NULL, `created_at` INTEGER, FOREIGN KEY(`project_id`) REFERENCES `projects`(`project_id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
         db.execSQL("CREATE INDEX IF NOT EXISTS `index_milestones_project_id` ON `milestones` (`project_id`)");
         db.execSQL("CREATE INDEX IF NOT EXISTS `index_milestones_due_date` ON `milestones` (`due_date`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `activity_logs` (`log_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `entity_type` TEXT, `entity_id` INTEGER NOT NULL, `action` TEXT, `details` TEXT, `created_at` INTEGER)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_activity_logs_entity_type_entity_id` ON `activity_logs` (`entity_type`, `entity_id`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_activity_logs_created_at` ON `activity_logs` (`created_at`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `tags` (`tag_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `color` TEXT, `created_at` INTEGER)");
+        db.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_tags_name` ON `tags` (`name`)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `task_tags` (`task_id` INTEGER NOT NULL, `tag_id` INTEGER NOT NULL, PRIMARY KEY(`task_id`, `tag_id`), FOREIGN KEY(`task_id`) REFERENCES `tasks`(`task_id`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`tag_id`) REFERENCES `tags`(`tag_id`) ON UPDATE NO ACTION ON DELETE CASCADE )");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_task_tags_task_id` ON `task_tags` (`task_id`)");
+        db.execSQL("CREATE INDEX IF NOT EXISTS `index_task_tags_tag_id` ON `task_tags` (`tag_id`)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '09cf1a5c39731d5f0c72cc7e255f1846')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '41f2e069bb084bbda60cc2b41d90d296')");
       }
 
       @Override
@@ -60,6 +88,9 @@ public final class TodoDatabase_Impl extends TodoDatabase {
         db.execSQL("DROP TABLE IF EXISTS `categories`");
         db.execSQL("DROP TABLE IF EXISTS `subtasks`");
         db.execSQL("DROP TABLE IF EXISTS `milestones`");
+        db.execSQL("DROP TABLE IF EXISTS `activity_logs`");
+        db.execSQL("DROP TABLE IF EXISTS `tags`");
+        db.execSQL("DROP TABLE IF EXISTS `task_tags`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -220,9 +251,58 @@ public final class TodoDatabase_Impl extends TodoDatabase {
                   + " Expected:\n" + _infoMilestones + "\n"
                   + " Found:\n" + _existingMilestones);
         }
+        final HashMap<String, TableInfo.Column> _columnsActivityLogs = new HashMap<String, TableInfo.Column>(6);
+        _columnsActivityLogs.put("log_id", new TableInfo.Column("log_id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsActivityLogs.put("entity_type", new TableInfo.Column("entity_type", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsActivityLogs.put("entity_id", new TableInfo.Column("entity_id", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsActivityLogs.put("action", new TableInfo.Column("action", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsActivityLogs.put("details", new TableInfo.Column("details", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsActivityLogs.put("created_at", new TableInfo.Column("created_at", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysActivityLogs = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesActivityLogs = new HashSet<TableInfo.Index>(2);
+        _indicesActivityLogs.add(new TableInfo.Index("index_activity_logs_entity_type_entity_id", false, Arrays.asList("entity_type", "entity_id"), Arrays.asList("ASC", "ASC")));
+        _indicesActivityLogs.add(new TableInfo.Index("index_activity_logs_created_at", false, Arrays.asList("created_at"), Arrays.asList("ASC")));
+        final TableInfo _infoActivityLogs = new TableInfo("activity_logs", _columnsActivityLogs, _foreignKeysActivityLogs, _indicesActivityLogs);
+        final TableInfo _existingActivityLogs = TableInfo.read(db, "activity_logs");
+        if (!_infoActivityLogs.equals(_existingActivityLogs)) {
+          return new RoomOpenHelper.ValidationResult(false, "activity_logs(com.todolist.app.data.local.entity.ActivityLog).\n"
+                  + " Expected:\n" + _infoActivityLogs + "\n"
+                  + " Found:\n" + _existingActivityLogs);
+        }
+        final HashMap<String, TableInfo.Column> _columnsTags = new HashMap<String, TableInfo.Column>(4);
+        _columnsTags.put("tag_id", new TableInfo.Column("tag_id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTags.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTags.put("color", new TableInfo.Column("color", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTags.put("created_at", new TableInfo.Column("created_at", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysTags = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesTags = new HashSet<TableInfo.Index>(1);
+        _indicesTags.add(new TableInfo.Index("index_tags_name", true, Arrays.asList("name"), Arrays.asList("ASC")));
+        final TableInfo _infoTags = new TableInfo("tags", _columnsTags, _foreignKeysTags, _indicesTags);
+        final TableInfo _existingTags = TableInfo.read(db, "tags");
+        if (!_infoTags.equals(_existingTags)) {
+          return new RoomOpenHelper.ValidationResult(false, "tags(com.todolist.app.data.local.entity.Tag).\n"
+                  + " Expected:\n" + _infoTags + "\n"
+                  + " Found:\n" + _existingTags);
+        }
+        final HashMap<String, TableInfo.Column> _columnsTaskTags = new HashMap<String, TableInfo.Column>(2);
+        _columnsTaskTags.put("task_id", new TableInfo.Column("task_id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsTaskTags.put("tag_id", new TableInfo.Column("tag_id", "INTEGER", true, 2, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysTaskTags = new HashSet<TableInfo.ForeignKey>(2);
+        _foreignKeysTaskTags.add(new TableInfo.ForeignKey("tasks", "CASCADE", "NO ACTION", Arrays.asList("task_id"), Arrays.asList("task_id")));
+        _foreignKeysTaskTags.add(new TableInfo.ForeignKey("tags", "CASCADE", "NO ACTION", Arrays.asList("tag_id"), Arrays.asList("tag_id")));
+        final HashSet<TableInfo.Index> _indicesTaskTags = new HashSet<TableInfo.Index>(2);
+        _indicesTaskTags.add(new TableInfo.Index("index_task_tags_task_id", false, Arrays.asList("task_id"), Arrays.asList("ASC")));
+        _indicesTaskTags.add(new TableInfo.Index("index_task_tags_tag_id", false, Arrays.asList("tag_id"), Arrays.asList("ASC")));
+        final TableInfo _infoTaskTags = new TableInfo("task_tags", _columnsTaskTags, _foreignKeysTaskTags, _indicesTaskTags);
+        final TableInfo _existingTaskTags = TableInfo.read(db, "task_tags");
+        if (!_infoTaskTags.equals(_existingTaskTags)) {
+          return new RoomOpenHelper.ValidationResult(false, "task_tags(com.todolist.app.data.local.entity.TaskTag).\n"
+                  + " Expected:\n" + _infoTaskTags + "\n"
+                  + " Found:\n" + _existingTaskTags);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "09cf1a5c39731d5f0c72cc7e255f1846", "2cdddc503b1f187a3e511f268928595b");
+    }, "41f2e069bb084bbda60cc2b41d90d296", "a8b8bff4eb62b9d7fc40f994c6c649b7");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -233,7 +313,7 @@ public final class TodoDatabase_Impl extends TodoDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "tasks","projects","categories","subtasks","milestones");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "tasks","projects","categories","subtasks","milestones","activity_logs","tags","task_tags");
   }
 
   @Override
@@ -254,6 +334,9 @@ public final class TodoDatabase_Impl extends TodoDatabase {
       _db.execSQL("DELETE FROM `categories`");
       _db.execSQL("DELETE FROM `subtasks`");
       _db.execSQL("DELETE FROM `milestones`");
+      _db.execSQL("DELETE FROM `activity_logs`");
+      _db.execSQL("DELETE FROM `tags`");
+      _db.execSQL("DELETE FROM `task_tags`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -271,6 +354,11 @@ public final class TodoDatabase_Impl extends TodoDatabase {
   @NonNull
   protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
+    _typeConvertersMap.put(TaskDao.class, TaskDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(SubtaskDao.class, SubtaskDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(ProjectDao.class, ProjectDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(CategoryDao.class, CategoryDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(ActivityLogDao.class, ActivityLogDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -287,5 +375,75 @@ public final class TodoDatabase_Impl extends TodoDatabase {
       @NonNull final Map<Class<? extends AutoMigrationSpec>, AutoMigrationSpec> autoMigrationSpecs) {
     final List<Migration> _autoMigrations = new ArrayList<Migration>();
     return _autoMigrations;
+  }
+
+  @Override
+  public TaskDao taskDao() {
+    if (_taskDao != null) {
+      return _taskDao;
+    } else {
+      synchronized(this) {
+        if(_taskDao == null) {
+          _taskDao = new TaskDao_Impl(this);
+        }
+        return _taskDao;
+      }
+    }
+  }
+
+  @Override
+  public SubtaskDao subtaskDao() {
+    if (_subtaskDao != null) {
+      return _subtaskDao;
+    } else {
+      synchronized(this) {
+        if(_subtaskDao == null) {
+          _subtaskDao = new SubtaskDao_Impl(this);
+        }
+        return _subtaskDao;
+      }
+    }
+  }
+
+  @Override
+  public ProjectDao projectDao() {
+    if (_projectDao != null) {
+      return _projectDao;
+    } else {
+      synchronized(this) {
+        if(_projectDao == null) {
+          _projectDao = new ProjectDao_Impl(this);
+        }
+        return _projectDao;
+      }
+    }
+  }
+
+  @Override
+  public CategoryDao categoryDao() {
+    if (_categoryDao != null) {
+      return _categoryDao;
+    } else {
+      synchronized(this) {
+        if(_categoryDao == null) {
+          _categoryDao = new CategoryDao_Impl(this);
+        }
+        return _categoryDao;
+      }
+    }
+  }
+
+  @Override
+  public ActivityLogDao activityLogDao() {
+    if (_activityLogDao != null) {
+      return _activityLogDao;
+    } else {
+      synchronized(this) {
+        if(_activityLogDao == null) {
+          _activityLogDao = new ActivityLogDao_Impl(this);
+        }
+        return _activityLogDao;
+      }
+    }
   }
 }

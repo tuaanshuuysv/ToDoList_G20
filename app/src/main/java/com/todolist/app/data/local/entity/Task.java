@@ -114,6 +114,14 @@ public class Task {
         this.position = 0;
     }
 
+    public Task(String title, String description, boolean isCompleted) {
+        this(); // Dòng này cực quan trọng: nó gọi lại cái public Task() ở trên để lấy ngày tháng mặc định
+        this.title = title;
+        this.description = description;
+        this.isCompleted = isCompleted;
+        this.status = isCompleted ? "COMPLETED" : "PENDING";
+    }
+
     // ============================================
     // GETTERS
     // ============================================

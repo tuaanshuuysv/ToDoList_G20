@@ -1,5 +1,8 @@
 package com.todolist.app.data.local.dao;
 
-public class CategoryDao {
+import androidx.room.Dao;
+
+@Dao
+public interface CategoryDao {
     // TODO: Implement CategoryDao
 }

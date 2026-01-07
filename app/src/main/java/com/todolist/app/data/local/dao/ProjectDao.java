@@ -1,5 +1,8 @@
 package com.todolist.app.data.local.dao;
 
-public class ProjectDao {
+import androidx.room.Dao;
+
+@Dao
+public interface ProjectDao {
     // TODO: Implement ProjectDao
 }
