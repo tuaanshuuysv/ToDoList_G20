@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:name=".TodoApplication"
@@ -21,6 +23,12 @@
 
         <activity android:name=".presentation.ui.settings.SettingsActivity" />
         <activity android:name=".presentation.ui.focus.FocusModeActivity" />
+
+        <receiver
+            android:name=".presentation.service.notification.NotificationReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
 
     </application>
 

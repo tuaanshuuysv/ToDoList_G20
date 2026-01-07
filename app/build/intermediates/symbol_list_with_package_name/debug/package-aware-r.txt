@@ -3425,6 +3425,7 @@ id labeled
 id layout
 id layout_header
 id layout_header_detail
+id layout_set_reminder
 id left
 id leftToRight
 id legacy
@@ -3681,6 +3682,7 @@ id triangle
 id tv_detail_category
 id tv_detail_deadline
 id tv_detail_priority
+id tv_detail_reminder
 id tv_detail_task_title
 id tv_subtask_info
 id tv_subtask_title

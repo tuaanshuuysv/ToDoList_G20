@@ -3424,6 +3424,7 @@ int id labeled 0x7f0800e9
 int id layout 0x7f0800ea
 int id layout_header 0x7f080203
 int id layout_header_detail 0x7f080211
+int id layout_set_reminder 0x7f080219
 int id left 0x7f0800eb
 int id leftToRight 0x7f0800ec
 int id legacy 0x7f0800ed
@@ -3680,6 +3681,7 @@ int id triangle 0x7f0801e5
 int id tv_detail_category 0x7f080216
 int id tv_detail_deadline 0x7f080217
 int id tv_detail_priority 0x7f080218
+int id tv_detail_reminder 0x7f08021a
 int id tv_detail_task_title 0x7f080213
 int id tv_subtask_info 0x7f080214
 int id tv_subtask_title 0x7f080215

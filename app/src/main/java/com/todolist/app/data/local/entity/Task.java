@@ -9,12 +9,8 @@ import androidx.room.PrimaryKey;
 import java.util.Date;
 
 /**
- * Task Entity - Bảng chính của ứng dụng
- * Đại diện cho một công việc cần làm
- * <p>
- * Foreign Keys:
- * - project_id → projects.project_id (ON DELETE SET NULL)
- * - category_id → categories.category_id (ON DELETE SET NULL)
+ * Task Entity - Định nghĩa bảng "tasks" trong cơ sở dữ liệu.
+ * Kết nối với bảng Project và Category thông qua Foreign Keys.
  */
 @Entity(
         tableName = "tasks",
@@ -42,6 +38,7 @@ import java.util.Date;
 )
 public class Task {
 
+    // 1. CÁC TRƯỜNG DỮ LIỆU (COLUMNS)
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "task_id")
     private long taskId;
@@ -53,46 +50,46 @@ public class Task {
     private String description;
 
     @ColumnInfo(name = "project_id")
-    private Long projectId;  // Nullable - task có thể không thuộc project
+    private Long projectId;  // Nullable - Task có thể không thuộc dự án nào
 
     @ColumnInfo(name = "category_id")
-    private Long categoryId;  // Nullable
+    private Long categoryId;
 
     @ColumnInfo(name = "priority")
     private String priority;  // HIGH, MEDIUM, LOW
 
     @ColumnInfo(name = "status")
-    private String status;  // PENDING, IN_PROGRESS, COMPLETED
+    private String status;    // PENDING, IN_PROGRESS, COMPLETED
 
     @ColumnInfo(name = "due_date")
-    private Date dueDate;  // Nullable
+    private Date dueDate;
 
     @ColumnInfo(name = "reminder_time")
-    private Date reminderTime;  // Nullable
+    private Date reminderTime;
 
     @ColumnInfo(name = "estimated_duration")
-    private Integer estimatedDuration;  // Phút, nullable
+    private Integer estimatedDuration; // Thời gian ước tính (phút)
 
     @ColumnInfo(name = "actual_duration")
-    private Integer actualDuration;  // Phút, nullable
+    private Integer actualDuration;    // Thời gian thực tế (phút)
 
     @ColumnInfo(name = "is_completed")
     private boolean isCompleted;
 
     @ColumnInfo(name = "completed_at")
-    private Date completedAt;  // Nullable
+    private Date completedAt;
 
     @ColumnInfo(name = "is_recurring")
-    private boolean isRecurring;
+    private boolean isRecurring; // Công việc lặp lại
 
     @ColumnInfo(name = "recurrence_rule")
-    private String recurrenceRule;  // RFC 5545 format, nullable
+    private String recurrenceRule;
 
     @ColumnInfo(name = "parent_recurring_task_id")
-    private Long parentRecurringTaskId;  // Self-reference, nullable
+    private Long parentRecurringTaskId;
 
     @ColumnInfo(name = "position")
-    private int position;  // Để sắp xếp, drag-drop
+    private int position; // Hỗ trợ sắp xếp thủ công (drag-drop)
 
     @ColumnInfo(name = "created_at")
     private Date createdAt;
@@ -101,7 +98,7 @@ public class Task {
     private Date updatedAt;
 
     // ============================================
-    // CONSTRUCTOR
+    // 2. CONSTRUCTORS
     // ============================================
 
     public Task() {
@@ -115,7 +112,7 @@ public class Task {
     }
 
     public Task(String title, String description, boolean isCompleted) {
-        this(); // Dòng này cực quan trọng: nó gọi lại cái public Task() ở trên để lấy ngày tháng mặc định
+        this(); // Gọi constructor mặc định để khởi tạo các giá trị ban đầu
         this.title = title;
         this.description = description;
         this.isCompleted = isCompleted;
@@ -123,186 +120,83 @@ public class Task {
     }
 
     // ============================================
-    // GETTERS
+    // 3. GETTERS & SETTERS
     // ============================================
 
-    public long getTaskId() {
-        return taskId;
-    }
+    public long getTaskId() { return taskId; }
+    public void setTaskId(long taskId) { this.taskId = taskId; }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public Long getProjectId() {
-        return projectId;
-    }
+    public Long getProjectId() { return projectId; }
+    public void setProjectId(Long projectId) { this.projectId = projectId; }
 
-    public Long getCategoryId() {
-        return categoryId;
-    }
+    public Long getCategoryId() { return categoryId; }
+    public void setCategoryId(Long categoryId) { this.categoryId = categoryId; }
 
-    public String getPriority() {
-        return priority;
-    }
+    public String getPriority() { return priority; }
+    public void setPriority(String priority) { this.priority = priority; }
 
-    public String getStatus() {
-        return status;
-    }
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 
-    public Date getDueDate() {
-        return dueDate;
-    }
+    public Date getDueDate() { return dueDate; }
+    public void setDueDate(Date dueDate) { this.dueDate = dueDate; }
 
-    public Date getReminderTime() {
-        return reminderTime;
-    }
+    public Date getReminderTime() { return reminderTime; }
+    public void setReminderTime(Date reminderTime) { this.reminderTime = reminderTime; }
 
-    public Integer getEstimatedDuration() {
-        return estimatedDuration;
-    }
+    public Integer getEstimatedDuration() { return estimatedDuration; }
+    public void setEstimatedDuration(Integer estimatedDuration) { this.estimatedDuration = estimatedDuration; }
 
-    public Integer getActualDuration() {
-        return actualDuration;
-    }
+    public Integer getActualDuration() { return actualDuration; }
+    public void setActualDuration(Integer actualDuration) { this.actualDuration = actualDuration; }
 
-    public boolean isCompleted() {
-        return isCompleted;
-    }
+    public boolean isCompleted() { return isCompleted; }
+    public void setCompleted(boolean completed) { isCompleted = completed; }
 
-    public Date getCompletedAt() {
-        return completedAt;
-    }
+    public Date getCompletedAt() { return completedAt; }
+    public void setCompletedAt(Date completedAt) { this.completedAt = completedAt; }
 
-    public boolean isRecurring() {
-        return isRecurring;
-    }
+    public boolean isRecurring() { return isRecurring; }
+    public void setRecurring(boolean recurring) { isRecurring = recurring; }
 
-    public String getRecurrenceRule() {
-        return recurrenceRule;
-    }
+    public String getRecurrenceRule() { return recurrenceRule; }
+    public void setRecurrenceRule(String recurrenceRule) { this.recurrenceRule = recurrenceRule; }
 
-    public Long getParentRecurringTaskId() {
-        return parentRecurringTaskId;
-    }
+    public Long getParentRecurringTaskId() { return parentRecurringTaskId; }
+    public void setParentRecurringTaskId(Long parentRecurringTaskId) { this.parentRecurringTaskId = parentRecurringTaskId; }
 
-    public int getPosition() {
-        return position;
-    }
+    public int getPosition() { return position; }
+    public void setPosition(int position) { this.position = position; }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+    public Date getCreatedAt() { return createdAt; }
+    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
+    public Date getUpdatedAt() { return updatedAt; }
+    public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
 
     // ============================================
-    // SETTERS
-    // ============================================
-
-    public void setTaskId(long taskId) {
-        this.taskId = taskId;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setProjectId(Long projectId) {
-        this.projectId = projectId;
-    }
-
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public void setPriority(String priority) {
-        this.priority = priority;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    public void setReminderTime(Date reminderTime) {
-        this.reminderTime = reminderTime;
-    }
-
-    public void setEstimatedDuration(Integer estimatedDuration) {
-        this.estimatedDuration = estimatedDuration;
-    }
-
-    public void setActualDuration(Integer actualDuration) {
-        this.actualDuration = actualDuration;
-    }
-
-    public void setCompleted(boolean completed) {
-        isCompleted = completed;
-    }
-
-    public void setCompletedAt(Date completedAt) {
-        this.completedAt = completedAt;
-    }
-
-    public void setRecurring(boolean recurring) {
-        isRecurring = recurring;
-    }
-
-    public void setRecurrenceRule(String recurrenceRule) {
-        this.recurrenceRule = recurrenceRule;
-    }
-
-    public void setParentRecurringTaskId(Long parentRecurringTaskId) {
-        this.parentRecurringTaskId = parentRecurringTaskId;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    // ============================================
-    // UTILITY METHODS
+    // 4. UTILITY METHODS (HÀM TIỆN ÍCH)
     // ============================================
 
     /**
-     * Check if task is overdue
+     * Kiểm tra xem công việc có bị quá hạn không
      */
     public boolean isOverdue() {
-        if (dueDate == null || isCompleted) {
-            return false;
-        }
+        if (dueDate == null || isCompleted) return false;
         return dueDate.before(new Date());
     }
 
     /**
-     * Get days until due date (negative if overdue)
+     * Lấy số ngày còn lại đến hạn (số âm nếu đã quá hạn)
      */
     public int getDaysUntilDue() {
-        if (dueDate == null) {
-            return Integer.MAX_VALUE;
-        }
+        if (dueDate == null) return Integer.MAX_VALUE;
         long diff = dueDate.getTime() - new Date().getTime();
         return (int) (diff / (1000 * 60 * 60 * 24));
     }
@@ -312,8 +206,6 @@ public class Task {
         return "Task{" +
                 "taskId=" + taskId +
                 ", title='" + title + '\'' +
-                ", priority='" + priority + '\'' +
-                ", status='" + status + '\'' +
                 ", isCompleted=" + isCompleted +
                 '}';
     }

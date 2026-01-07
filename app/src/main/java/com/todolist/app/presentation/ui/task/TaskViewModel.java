@@ -5,68 +5,71 @@ import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.todolist.app.data.local.entity.Task;
-import com.todolist.app.data.local.entity.Subtask; // Thêm import này
+import com.todolist.app.data.local.entity.Subtask;
 import com.todolist.app.data.repository.TaskRepository;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * ViewModel quản lý logic nghiệp vụ cho Task và Subtask.
+ * Sử dụng MediatorLiveData để kết hợp Lọc (Filter) và Sắp xếp (Sort).
+ */
 public class TaskViewModel extends ViewModel {
 
     private final TaskRepository taskRepository;
 
-    // Nguồn dữ liệu gốc từ DB
-    private final LiveData<List<Task>> sourceTasks;
-
-    // Hai biến điều khiển (Filter & Sort)
+    // 1. Nguồn dữ liệu
+    private final LiveData<List<Task>> sourceTasks; // Dữ liệu gốc từ Database
     private final MutableLiveData<Integer> sortOrder = new MutableLiveData<>(1); // 1: Deadline, 2: Priority
     private final MutableLiveData<Long> filterCategoryId = new MutableLiveData<>(0L); // 0: Tất cả
 
-    // LiveData cuối cùng để UI quan sát
+    // LiveData cuối cùng mà UI (Fragment) sẽ quan sát
     private final MediatorLiveData<List<Task>> tasks = new MediatorLiveData<>();
 
     public TaskViewModel(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
         this.sourceTasks = taskRepository.getAllTasks();
 
-        // Kết hợp 3 nguồn: Khi DB thay đổi, hoặc đổi Sort, hoặc đổi Filter -> Chạy hàm xử lý
+        // Thiết lập MediatorLiveData quan sát đồng thời 3 nguồn:
+        // Khi DB thay đổi, hoặc đổi kiểu Sắp xếp, hoặc đổi bộ Lọc -> Tự động xử lý lại danh sách
         tasks.addSource(sourceTasks, value -> combineAndProcess());
         tasks.addSource(sortOrder, value -> combineAndProcess());
         tasks.addSource(filterCategoryId, value -> combineAndProcess());
     }
 
-    /**
-     * Logic chính: Lọc trước rồi mới Sắp xếp
-     */
+    // ============================================
+    // 2. LOGIC XỬ LÝ DỮ LIỆU (FILTER & SORT)
+    // ============================================
+
     private void combineAndProcess() {
         List<Task> originalList = sourceTasks.getValue();
         if (originalList == null) return;
 
         Integer order = sortOrder.getValue();
         Long categoryId = filterCategoryId.getValue();
-
         List<Task> processedList = new ArrayList<>();
 
-        // 1. LỌC (Filtering)
+        // Bước 1: LỌC (Filtering) theo Danh mục
         for (Task task : originalList) {
             if (categoryId == 0 || task.getCategoryId() == categoryId) {
                 processedList.add(task);
             }
         }
 
-        // 2. SẮP XẾP (Sorting)
+        // Bước 2: SẮP XẾP (Sorting)
         Collections.sort(processedList, (t1, t2) -> {
-            // Luôn đẩy việc xong xuống dưới
+            // Quy tắc chung: Đẩy các công việc đã hoàn thành xuống cuối danh sách
             int completedCompare = Boolean.compare(t1.isCompleted(), t2.isCompleted());
             if (completedCompare != 0) return completedCompare;
 
             if (order != null && order == 1) {
-                // Deadline trước -> Ưu tiên sau
+                // Ưu tiên Sắp xếp theo Hạn chót (Deadline)
                 int res = compareByDeadline(t1, t2);
                 if (res != 0) return res;
                 return Integer.compare(getPriorityValue(t1.getPriority()), getPriorityValue(t2.getPriority()));
             } else {
-                // Ưu tiên trước -> Deadline sau
+                // Ưu tiên Sắp xếp theo Mức độ quan trọng (Priority)
                 int res = Integer.compare(getPriorityValue(t1.getPriority()), getPriorityValue(t2.getPriority()));
                 if (res != 0) return res;
                 return compareByDeadline(t1, t2);
@@ -76,8 +79,7 @@ public class TaskViewModel extends ViewModel {
         tasks.setValue(processedList);
     }
 
-    // --- HÀM HỖ TRỢ ---
-
+    // --- Hàm hỗ trợ so sánh thời gian ---
     private int compareByDeadline(Task t1, Task t2) {
         if (t1.getDueDate() != null && t2.getDueDate() != null) {
             return t1.getDueDate().compareTo(t2.getDueDate());
@@ -86,6 +88,7 @@ public class TaskViewModel extends ViewModel {
         return 0;
     }
 
+    // --- Hàm chuyển đổi mức độ ưu tiên sang số để so sánh ---
     private int getPriorityValue(String priority) {
         if (priority == null) return 4;
         switch (priority.toUpperCase()) {
@@ -96,28 +99,28 @@ public class TaskViewModel extends ViewModel {
         }
     }
 
-    // --- CÁC HÀM GỌI TỪ UI (TASK) ---
+    // ============================================
+    // 3. CÁC PHƯƠNG THỨC CHO TASK (GỌI TỪ UI)
+    // ============================================
+
+    public LiveData<List<Task>> getTasks() { return tasks; }
+
+    public LiveData<Task> getTaskById(long id) { return taskRepository.getTaskById(id); }
 
     public void setSortOrder(int order) { sortOrder.setValue(order); }
 
     public void setFilterCategory(long categoryId) { filterCategoryId.setValue(categoryId); }
 
-    public LiveData<List<Task>> getTasks() { return tasks; }
-
-    // Thêm vào TaskViewModel.java
-    public LiveData<Task> getTaskById(long id) {
-        return taskRepository.getTaskById(id);
-    }
-
     public void insert(Task task) { executeInBackground(() -> taskRepository.insertTask(task)); }
+
     public void update(Task task) { executeInBackground(() -> taskRepository.updateTask(task)); }
+
     public void delete(Task task) { executeInBackground(() -> taskRepository.deleteTask(task)); }
 
-    // --- CÁC HÀM GỌI TỪ UI (SUBTASK) - MỚI THÊM ---
+    // ============================================
+    // 4. CÁC PHƯƠNG THỨC CHO SUBTASK (GỌI TỪ UI)
+    // ============================================
 
-    /**
-     * Lấy danh sách Subtasks của một Task cụ thể
-     */
     public LiveData<List<Subtask>> getSubtasks(long taskId) {
         return taskRepository.getSubtasksByTaskId(taskId);
     }
@@ -138,9 +141,12 @@ public class TaskViewModel extends ViewModel {
         executeInBackground(() -> taskRepository.updateSubtaskStatus(subtaskId, isCompleted));
     }
 
-    // --- CHẠY NGẦM ---
+    // ============================================
+    // 5. QUẢN LÝ LUỒNG (THREADING)
+    // ============================================
 
     private void executeInBackground(Runnable action) {
+        // Chạy các thao tác ghi DB trên luồng riêng để tránh treo UI
         new Thread(action).start();
     }
 }
