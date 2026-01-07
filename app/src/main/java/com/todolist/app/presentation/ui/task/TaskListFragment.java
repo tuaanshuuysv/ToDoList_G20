@@ -54,7 +54,7 @@ public class TaskListFragment extends Fragment {
 
     private void initCore() {
         TodoDatabase db = TodoDatabase.getInstance(requireContext());
-        TaskRepository repository = new TaskRepository(db.taskDao());
+        TaskRepository repository = new TaskRepository(db.taskDao(), db.subtaskDao());
         taskViewModel = new TaskViewModel(repository);
 
         taskViewModel.getTasks().observe(getViewLifecycleOwner(), tasks -> {
@@ -66,9 +66,24 @@ public class TaskListFragment extends Fragment {
         RecyclerView rv = view.findViewById(R.id.rv_tasks);
         taskAdapter = new TaskAdapter();
 
+        // Sự kiện Xóa (Giữ nguyên)
         taskAdapter.setOnTaskDeleteListener(task -> taskViewModel.delete(task));
-        taskAdapter.setOnTaskClickListener(this::showTaskDialog);
-        taskAdapter.setOnTaskStatusChangeListener((task, isDone) -> taskViewModel.update(task));
+
+        // MỚI: Sự kiện Bấm vào toàn bộ Item để xem Subtasks (Công việc con)
+        taskAdapter.setOnTaskClickListener(task -> {
+            openTaskDetailFragment(task);
+        });
+
+        // MỚI: Sự kiện Bấm vào nút 3 chấm để Chỉnh sửa nhanh
+        taskAdapter.setOnTaskEditListener(task -> {
+            showTaskDialog(task); // Tận dụng lại hàm showTaskDialog cũ của Long
+        });
+
+        // Sự kiện Checkbox (Giữ nguyên)
+        taskAdapter.setOnTaskStatusChangeListener((task, isDone) -> {
+            task.setCompleted(isDone);
+            taskViewModel.update(task);
+        });
 
         rv.setLayoutManager(new LinearLayoutManager(requireContext()));
         rv.setAdapter(taskAdapter);
@@ -242,5 +257,23 @@ public class TaskListFragment extends Fragment {
 
     private void addSpacer(LinearLayout layout) {
         layout.addView(new View(requireContext()), new LinearLayout.LayoutParams(1, 30));
+    }
+
+    /**
+     * MỚI: Hàm điều hướng sang màn hình chi tiết Subtasks
+     */
+    private void openTaskDetailFragment(Task task) {
+       Toast.makeText(requireContext(), "Mở chi tiết: " + task.getTitle(), Toast.LENGTH_SHORT).show();
+
+       Bundle bundle = new Bundle();
+       bundle.putLong("TASK_ID", task.getTaskId()); // Truyền ID sang để lấy Subtasks
+
+       TaskDetailFragment detailFragment = new TaskDetailFragment();
+       detailFragment.setArguments(bundle);
+
+       getParentFragmentManager().beginTransaction()
+           .replace(android.R.id.content, detailFragment)
+           .addToBackStack(null)
+           .commit();
     }
 }

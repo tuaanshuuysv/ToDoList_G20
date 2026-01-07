@@ -3274,7 +3274,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_add_subtask
+id btn_back
+id btn_delete_subtask
 id btn_delete_task
+id btn_more_options
 id btn_sort
 id buttonPanel
 id cache_measures
@@ -3291,6 +3295,7 @@ id chain
 id chain2
 id chains
 id checkbox
+id checkbox_subtask
 id checked
 id chip_all
 id chip_group_filter
@@ -3363,6 +3368,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id et_add_subtask_title
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3418,6 +3424,7 @@ id jumpToStart
 id labeled
 id layout
 id layout_header
+id layout_header_detail
 id left
 id leftToRight
 id legacy
@@ -3558,6 +3565,7 @@ id right_side
 id rounded
 id row_index_key
 id rtl
+id rv_subtasks
 id rv_tasks
 id save_non_transition_alpha
 id save_overlay_view
@@ -3670,6 +3678,12 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id tv_detail_category
+id tv_detail_deadline
+id tv_detail_priority
+id tv_detail_task_title
+id tv_subtask_info
+id tv_subtask_title
 id tv_task_category
 id tv_task_deadline
 id tv_task_description
@@ -3830,7 +3844,9 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_task_detail
 layout fragment_task_list
+layout item_subtask
 layout item_task
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

@@ -5,6 +5,7 @@ import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import com.todolist.app.data.local.entity.Task;
+import com.todolist.app.data.local.entity.Subtask; // Thêm import này
 import com.todolist.app.data.repository.TaskRepository;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -95,7 +96,7 @@ public class TaskViewModel extends ViewModel {
         }
     }
 
-    // --- CÁC HÀM GỌI TỪ UI ---
+    // --- CÁC HÀM GỌI TỪ UI (TASK) ---
 
     public void setSortOrder(int order) { sortOrder.setValue(order); }
 
@@ -103,9 +104,41 @@ public class TaskViewModel extends ViewModel {
 
     public LiveData<List<Task>> getTasks() { return tasks; }
 
+    // Thêm vào TaskViewModel.java
+    public LiveData<Task> getTaskById(long id) {
+        return taskRepository.getTaskById(id);
+    }
+
     public void insert(Task task) { executeInBackground(() -> taskRepository.insertTask(task)); }
     public void update(Task task) { executeInBackground(() -> taskRepository.updateTask(task)); }
     public void delete(Task task) { executeInBackground(() -> taskRepository.deleteTask(task)); }
+
+    // --- CÁC HÀM GỌI TỪ UI (SUBTASK) - MỚI THÊM ---
+
+    /**
+     * Lấy danh sách Subtasks của một Task cụ thể
+     */
+    public LiveData<List<Subtask>> getSubtasks(long taskId) {
+        return taskRepository.getSubtasksByTaskId(taskId);
+    }
+
+    public void insertSubtask(Subtask subtask) {
+        executeInBackground(() -> taskRepository.insertSubtask(subtask));
+    }
+
+    public void updateSubtask(Subtask subtask) {
+        executeInBackground(() -> taskRepository.updateSubtask(subtask));
+    }
+
+    public void deleteSubtask(Subtask subtask) {
+        executeInBackground(() -> taskRepository.deleteSubtask(subtask));
+    }
+
+    public void updateSubtaskStatus(long subtaskId, boolean isCompleted) {
+        executeInBackground(() -> taskRepository.updateSubtaskStatus(subtaskId, isCompleted));
+    }
+
+    // --- CHẠY NGẦM ---
 
     private void executeInBackground(Runnable action) {
         new Thread(action).start();

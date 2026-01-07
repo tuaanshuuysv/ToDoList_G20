@@ -29,10 +29,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public interface OnTaskStatusChangeListener { void onStatusChange(Task task, boolean isCompleted); }
     public interface OnTaskClickListener { void onTaskClick(Task task); }
     public interface OnTaskDeleteListener { void onDelete(Task task); }
+    public interface OnTaskEditListener { void onEdit(Task task); } // Thêm mới để sửa task
 
     private OnTaskStatusChangeListener onTaskStatusChangeListener;
     private OnTaskClickListener onTaskClickListener;
     private OnTaskDeleteListener onTaskDeleteListener;
+    private OnTaskEditListener onTaskEditListener; // Thêm mới
 
     // --- Cập nhật dữ liệu ---
     public void setTasks(List<Task> tasks) {
@@ -45,6 +47,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public void setOnTaskStatusChangeListener(OnTaskStatusChangeListener l) { this.onTaskStatusChangeListener = l; }
     public void setOnTaskClickListener(OnTaskClickListener l) { this.onTaskClickListener = l; }
     public void setOnTaskDeleteListener(OnTaskDeleteListener l) { this.onTaskDeleteListener = l; }
+    public void setOnTaskEditListener(OnTaskEditListener l) { this.onTaskEditListener = l; } // Thêm mới
 
     @NonNull
     @Override
@@ -57,22 +60,21 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         Task task = taskList.get(position);
 
-        // --- 1. Reset trạng thái View (Tránh lỗi cuộn danh sách) ---
+        // --- Reset View ---
         holder.itemView.setAlpha(1.0f);
         holder.tvDeadline.setAlpha(1.0f);
-        holder.tvPriority.setBackgroundColor(Color.TRANSPARENT);
 
-        // --- 2. Tiêu đề & Checkbox hoàn thành ---
+        // --- Tiêu đề & Checkbox ---
         holder.tvTitle.setText(task.getTitle());
         holder.cbStatus.setChecked(task.isCompleted());
         if (task.isCompleted()) {
             holder.tvTitle.setPaintFlags(holder.tvTitle.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            holder.itemView.setAlpha(0.6f); // Làm mờ công việc đã xong
+            holder.itemView.setAlpha(0.6f);
         } else {
             holder.tvTitle.setPaintFlags(holder.tvTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         }
 
-        // --- 3. Hiển thị Mô tả (Ẩn nếu không có) ---
+        // --- Mô tả ---
         if (task.getDescription() != null && !task.getDescription().isEmpty()) {
             holder.tvDesc.setText(task.getDescription());
             holder.tvDesc.setVisibility(View.VISIBLE);
@@ -80,39 +82,30 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             holder.tvDesc.setVisibility(View.GONE);
         }
 
-        // --- 4. Phân loại (Categories) ---
+        // --- Phân loại ---
         String[] catNames = {"Cá nhân", "Công việc", "Học tập", "Mua sắm"};
         Long catId = task.getCategoryId();
         if (catId != null && catId >= 1 && catId <= 4) {
             holder.tvCategory.setVisibility(View.VISIBLE);
             holder.tvCategory.setText("📁 " + catNames[catId.intValue() - 1]);
             switch (catId.intValue()) {
-                case 1: holder.tvCategory.setTextColor(Color.parseColor("#008CFF")); break; // Xanh dương
-                case 2: holder.tvCategory.setTextColor(Color.parseColor("#FFBE00")); break; // Vàng
-                case 3: holder.tvCategory.setTextColor(Color.parseColor("#FF0018")); break; // Đỏ
-                case 4: holder.tvCategory.setTextColor(Color.parseColor("#049E0B")); break; // Xanh lá
+                case 1: holder.tvCategory.setTextColor(Color.parseColor("#008CFF")); break;
+                case 2: holder.tvCategory.setTextColor(Color.parseColor("#FFBE00")); break;
+                case 3: holder.tvCategory.setTextColor(Color.parseColor("#FF0018")); break;
+                case 4: holder.tvCategory.setTextColor(Color.parseColor("#049E0B")); break;
             }
         } else { holder.tvCategory.setVisibility(View.GONE); }
 
-        // --- 5. Độ ưu tiên (Priority) ---
+        // --- Độ ưu tiên ---
         String priority = (task.getPriority() != null) ? task.getPriority().toUpperCase() : "LOW";
         holder.tvPriority.setText(priority);
         switch (priority) {
-            case "HIGH":
-                holder.tvPriority.setTextColor(Color.parseColor("#D32F2F"));
-                holder.tvPriority.setBackgroundColor(Color.parseColor("#FFEBEE"));
-                break;
-            case "MEDIUM":
-                holder.tvPriority.setTextColor(Color.parseColor("#F57C00"));
-                holder.tvPriority.setBackgroundColor(Color.parseColor("#FFF3E0"));
-                break;
-            default: // LOW
-                holder.tvPriority.setTextColor(Color.parseColor("#388E3C"));
-                holder.tvPriority.setBackgroundColor(Color.parseColor("#E8F5E9"));
-                break;
+            case "HIGH": holder.tvPriority.setTextColor(Color.parseColor("#D32F2F")); holder.tvPriority.setBackgroundColor(Color.parseColor("#FFEBEE")); break;
+            case "MEDIUM": holder.tvPriority.setTextColor(Color.parseColor("#F57C00")); holder.tvPriority.setBackgroundColor(Color.parseColor("#FFF3E0")); break;
+            default: holder.tvPriority.setTextColor(Color.parseColor("#388E3C")); holder.tvPriority.setBackgroundColor(Color.parseColor("#E8F5E9")); break;
         }
 
-        // --- 6. Deadline & Cảnh báo trễ hạn ---
+        // --- Deadline ---
         if (task.getDueDate() != null) {
             holder.tvDeadline.setVisibility(View.VISIBLE);
             holder.tvDeadline.setText("📅 " + dateFormat.format(task.getDueDate()));
@@ -125,7 +118,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             }
         } else { holder.tvDeadline.setVisibility(View.GONE); }
 
-        // --- 7. Xử lý các sự kiện tương tác ---
+        // --- SỰ KIỆN TƯƠNG TÁC ---
         holder.cbStatus.setOnClickListener(v -> {
             task.setCompleted(holder.cbStatus.isChecked());
             if (onTaskStatusChangeListener != null) onTaskStatusChangeListener.onStatusChange(task, task.isCompleted());
@@ -142,6 +135,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
                     .setNegativeButton("Hủy", null).show();
         });
 
+        // Click vào nút 3 chấm để sửa
+        holder.btnMore.setOnClickListener(v -> {
+            if (onTaskEditListener != null) onTaskEditListener.onEdit(task);
+        });
+
+        // Click vào toàn bộ item để xem Subtasks
         holder.itemView.setOnClickListener(v -> {
             if (onTaskClickListener != null) onTaskClickListener.onTaskClick(task);
         });
@@ -153,7 +152,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     static class TaskViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitle, tvDesc, tvPriority, tvDeadline, tvCategory;
         CheckBox cbStatus;
-        ImageButton btnDelete;
+        ImageButton btnDelete, btnMore; // Thêm btnMore
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -164,6 +163,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             tvDeadline = itemView.findViewById(R.id.tv_task_deadline);
             tvCategory = itemView.findViewById(R.id.tv_task_category);
             btnDelete = itemView.findViewById(R.id.btn_delete_task);
+            btnMore = itemView.findViewById(R.id.btn_more_options); // Ánh xạ nút 3 chấm
         }
     }
 }
